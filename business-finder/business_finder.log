@@ -999,3 +999,16 @@ response headers:
 2025-05-27 20:46:04,331 - ERROR - Error buscando perfil de LinkedIn para Consulta Doctora Carmen Bravo: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DConsulta%2BDoctora%2BCarmen%2BBravo%2Bsite%253Alinkedin.com%252Fcompany%26num%3D3%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GOuQ2MEGIjCqxhCE8mqSHE3Y5xduD7dtCg1BMdW-9_MbVo6ATJXvEb0Edb1dlTKo-LIttiVawf8yAnJSWgFD
 2025-05-27 20:46:05,083 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
 2025-05-27 20:46:05,088 - INFO - Procesadas 20 empresas
+2025-05-27 23:08:33,071 - INFO - API queries_quota: 60
+2025-05-27 23:08:33,135 - INFO - Buscando empresas: Empresas en Vigo, GA, Spain
+2025-05-27 23:08:43,434 - INFO - Limitando procesamiento a 3 empresas
+2025-05-27 23:08:43,435 - INFO - Scrapeando http://grupoppa.es/
+2025-05-27 23:08:48,874 - ERROR - Error al convertir HTML a Markdown con Firecrawl: 'ScrapeResponse' object has no attribute 'get'
+2025-05-27 23:09:00,251 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2025-05-27 23:09:00,253 - ERROR - Error al insertar en Notion: body failed validation: body.properties.Description.rich_text[0].text.content should be a string, instead was `null`.
+2025-05-27 23:09:00,253 - WARNING - Empresa sin URL: Pur Elásticos
+2025-05-27 23:09:00,253 - INFO - Scrapeando http://www.astar.es/
+2025-05-27 23:09:14,336 - ERROR - Error al convertir HTML a Markdown con Firecrawl: 'ScrapeResponse' object has no attribute 'get'
+2025-05-27 23:09:28,944 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 400 Bad Request"
+2025-05-27 23:09:28,945 - ERROR - Error al insertar en Notion: body failed validation: body.properties.Description.rich_text[0].text.content should be a string, instead was `null`.
+2025-05-27 23:09:28,946 - INFO - Procesadas 3 empresas

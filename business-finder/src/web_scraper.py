@@ -33,6 +33,20 @@ class WebScraper:
             print(f"Error al descargar HTML: {e}")
             return None
 
+    def _clean_dict(self, d: Dict) -> Dict:
+        """
+        Limpia un diccionario eliminando objetos no serializables.
+        """
+        clean = {}
+        for k, v in d.items():
+            if isinstance(v, dict):
+                clean[k] = self._clean_dict(v)
+            elif isinstance(v, (str, int, float, bool, type(None))):
+                clean[k] = v
+            elif isinstance(v, (list, tuple)):
+                clean[k] = [self._clean_dict(i) if isinstance(i, dict) else i for i in v]
+        return clean
+
     def html_to_markdown(self, html: str, url: str) -> Tuple[str, str, Dict]:
         """
         Convierte HTML a Markdown usando Firecrawl y devuelve el markdown, contenido scrapeado y la respuesta completa.
@@ -41,26 +55,37 @@ class WebScraper:
             Tuple[str, str, Dict]: (markdown, contenido scrapeado, respuesta completa de Firecrawl)
         """
         try:
-            # Ejecutar la llamada asíncrona de Firecrawl
             response = asyncio.run(self.firecrawl.scrape_url(
                 url=url,
-                formats=['markdown', 'html'],  # Solo formatos permitidos
+                formats=['markdown', 'html'],
                 only_main_content=True,
                 block_ads=True,
                 timeout=30000
             ))
-            
-            if response.get('success') and 'data' in response:
-                markdown = response['data'].get('markdown', '')
-                # Usar el HTML como contenido scrapeado
-                scraped_content = response['data'].get('html', '')
-                return markdown, scraped_content, response
-            
-            # Fallback: solo texto plano si falla la API
-            soup = BeautifulSoup(html, 'html.parser')
-            text = soup.get_text(separator='\n')
-            return text, text, {}
-            
+
+            # Dump completo del objeto ScrapeResponse
+            if hasattr(response, 'model_dump'):
+                response_dict = response.model_dump()
+            elif hasattr(response, '__dict__'):
+                response_dict = response.__dict__
+            else:
+                response_dict = {}
+
+            # Limpiar el diccionario de objetos no serializables
+            response_dict = self._clean_dict(response_dict)
+
+            # Extraer markdown y html de la forma más robusta posible
+            markdown = ''
+            scraped_content = ''
+            if 'data' in response_dict:
+                markdown = response_dict['data'].get('markdown', '')
+                scraped_content = response_dict['data'].get('html', '')
+            elif hasattr(response, 'markdown') and hasattr(response, 'html'):
+                markdown = getattr(response, 'markdown', '')
+                scraped_content = getattr(response, 'html', '')
+
+            return markdown, scraped_content, response_dict
+
         except Exception as e:
             logging.error(f"Error al convertir HTML a Markdown con Firecrawl: {e}")
             # Fallback: solo texto plano

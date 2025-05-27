@@ -21,9 +21,9 @@ def insert_company_to_notion(company_data):
             'Name': {'title': [{'text': {'content': company_data.get('name', '')}}]},
             'Website': {'url': company_data.get('website', '') or None},
             'Website screenshot': {'url': company_data.get('url_screenshot', '') or None},
-            'Description': {'rich_text': [{'text': {'content': company_data.get('resumen', '')}}]},
+            'Description': {'rich_text': [{'text': {'content': company_data.get('resumen', '') or ''}}]},
             'Logo': {'url': company_data.get('url_logo', '') or None},
-            'Location': {'rich_text': [{'text': {'content': company_data.get('address', '')}}]},
+            'Location': {'rich_text': [{'text': {'content': company_data.get('address', '') or ''}}]},
             'Size': {'number': company_data.get('employee_count', {}).get('count')},
             'Brand colors': {'multi_select': [{'name': color} for color in company_data.get('colores_hex', [])]},
             'LinkedIn': {'url': company_data.get('linkedin_url', '') or None},
@@ -36,11 +36,13 @@ def insert_company_to_notion(company_data):
             
         # Añadir industria si existe
         if company_data.get('industry'):
-            properties['Primary industry'] = {'select': {'name': company_data['industry']}}
+            industry_clean = company_data['industry'].replace(',', ' ')
+            properties['Primary industry'] = {'select': {'name': industry_clean}}
         elif company_data.get('query'):
             # Usar la query de búsqueda como industria por defecto
             industry = company_data['query'].replace('empresas de ', '').replace('empresas ', '').strip()
-            properties['Primary industry'] = {'select': {'name': industry}}
+            industry_clean = industry.replace(',', ' ')
+            properties['Primary industry'] = {'select': {'name': industry_clean}}
         else:
             # Si no hay industria ni query, usar "Other"
             properties['Primary industry'] = {'select': {'name': 'Other'}}

@@ -54,7 +54,6 @@ class BusinessFinder:
                 
             # Convertir a markdown y generar resumen
             markdown, scraped_content, firecrawl_response = self.web_scraper.html_to_markdown(html, company.get('website'))
-            resumen = self.openai_client.resumir_texto(markdown)
             
             # Guardar markdown en archivo
             company_name = company.get('name', 'unknown').replace(' ', '_').lower()
@@ -68,7 +67,7 @@ class BusinessFinder:
             # Subir markdown a S3
             s3_markdown_key = f"markdown/{markdown_filename}"
             s3_markdown_url = self.s3_client.upload_file(markdown_path, s3_markdown_key)
-            company['markdown_url'] = s3_markdown_url
+            # company['markdown_url'] = s3_markdown_url  # Ya no usamos el .md para Notion
             
             # Guardar respuesta de Firecrawl en JSON
             if firecrawl_response:
@@ -82,7 +81,12 @@ class BusinessFinder:
                 # Subir JSON a S3
                 s3_json_key = f"json/{json_filename}"
                 s3_json_url = self.s3_client.upload_file(json_path, s3_json_key)
+                company['markdown_url'] = s3_json_url  # Ahora usamos el .json para Notion
                 company['firecrawl_json_url'] = s3_json_url
+                
+                # Generar resumen usando el archivo JSON
+                resumen = self.openai_client.resumir_texto(json_path)
+                company['resumen'] = resumen
             
             # Extraer y subir logo
             logo_url = self.web_scraper.extract_logo_url(html)
@@ -120,9 +124,6 @@ class BusinessFinder:
             linkedin_url = search_linkedin_profile(company['name'])
             if linkedin_url:
                 company['linkedin_url'] = linkedin_url
-            
-            # Añadir resumen
-            company['resumen'] = resumen
             
             # Determinar industria basada en el resumen
             if resumen:
