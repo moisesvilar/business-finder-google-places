@@ -131,10 +131,10 @@ class BusinessFinder:
                 logging.warning("No se encontraron empresas")
                 return
                 
-            # Procesar cada empresa (solo 3 para test)
+            # Procesar cada empresa
             processed_data = []
-            # for business in businesses:
-            for business in businesses[:3]:
+            # for business in businesses[:3]:
+            for business in businesses:
                 processed = self.process_company(business)
                 processed_data.append(processed)
             
