@@ -902,3 +902,100 @@ response headers:
 2025-05-27 20:39:40,171 - WARNING - Empresa sin URL: Clínica adelgazamiento Dra. Sotelo
 2025-05-27 20:39:40,172 - WARNING - Empresa sin URL: Clinica Dr. Hortas
 2025-05-27 20:39:40,173 - INFO - Procesadas 3 empresas
+2025-05-27 20:40:16,610 - INFO - API queries_quota: 60
+2025-05-27 20:40:16,679 - INFO - Buscando empresas: clínicas de nutrición en 42.22671735164634,-8.715127103115554
+2025-05-27 20:40:18,224 - INFO - Scrapeando http://nutrisalud.es/
+2025-05-27 20:40:22,556 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:40:32,692 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:40:34,230 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:40:34,232 - WARNING - Empresa sin URL: Clínica adelgazamiento Dra. Sotelo
+2025-05-27 20:40:34,232 - WARNING - Empresa sin URL: Clinica Dr. Hortas
+2025-05-27 20:40:34,232 - INFO - Scrapeando http://www.nutrendo.es/
+2025-05-27 20:40:39,552 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:40:50,404 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:40:54,001 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:40:54,003 - INFO - Scrapeando http://www.dietacoherente.com/
+2025-05-27 20:41:00,440 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:41:14,532 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:41:16,054 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:41:16,056 - WARNING - Empresa sin URL: Nutricionista en Vigo. Natalia Albino
+2025-05-27 20:41:16,056 - INFO - Scrapeando https://luciaterzi.com/
+2025-05-27 20:41:25,119 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:41:36,075 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:41:36,563 - ERROR - Error buscando número de empleados para Lucia Terzi Nutricionista: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DLucia%2BTerzi%2BNutricionista%2Bnumber%2Bof%2Bemployees%2Bsite%253Alinkedin.com%26num%3D5%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GOCO2MEGIjAuP8E7BuUolFiNmk7s8cnnZd0yQ-TyW7KtOgVWIkKbaLof5MDkN5pispf4HRMXIucyAnJSWgFD
+2025-05-27 20:41:37,252 - ERROR - Error buscando perfil de LinkedIn para Lucia Terzi Nutricionista: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DLucia%2BTerzi%2BNutricionista%2Bsite%253Alinkedin.com%252Fcompany%26num%3D3%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GOCO2MEGIjD3FirYYR-45PFcMnqOw-rPDMJtuWLD1dwp_uCS8goZRsWqY57De9qTpkwDfWJx3lwyAnJSWgFD
+2025-05-27 20:41:44,560 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:41:44,651 - INFO - Scrapeando http://www.manuelportela.es/
+2025-05-27 20:41:48,570 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:42:01,659 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:42:02,348 - ERROR - Error buscando número de empleados para CharroSalud Registro Saniatrio C-36-003449: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DCharroSalud%2BRegistro%2BSaniatrio%2BC-36-003449%2Bnumber%2Bof%2Bemployees%2Bsite%253Alinkedin.com%26num%3D5%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GPmO2MEGIjB9luWAu4stH4Zu_klDgWn5dyFL7FTY0F5s_OhlnTAQrtCanH_laot0TPanCYz1HOIyAnJSWgFD
+2025-05-27 20:42:03,059 - ERROR - Error buscando perfil de LinkedIn para CharroSalud Registro Saniatrio C-36-003449: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DCharroSalud%2BRegistro%2BSaniatrio%2BC-36-003449%2Bsite%253Alinkedin.com%252Fcompany%26num%3D3%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GPqO2MEGIjCbBhX8kx5Ya5IwPio12tI862RqSgiy3EGJLxQgdNXqMbxTd7I_21SKgvYUBt907ycyAnJSWgFD
+2025-05-27 20:42:03,812 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:42:03,814 - INFO - Scrapeando http://www.rocioportalnutricion.com/
+2025-05-27 20:42:11,097 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:42:25,384 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:42:25,672 - ERROR - Error buscando número de empleados para Rocío Portal - Centro Nutrición y Psicología en Vigo: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DRoc%25C3%25ADo%2BPortal%2B-%2BCentro%2BNutrici%25C3%25B3n%2By%2BPsicolog%25C3%25ADa%2Ben%2BVigo%2Bnumber%2Bof%2Bemployees%2Bsite%253Alinkedin.com%26num%3D5%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GJGP2MEGIjCT5O5uObJ6GtD-sEx7edzkInOpzROFybE6veXk_8iYYlGmHiRheWBAn7AyIj4PuUEyAnJSWgFD
+2025-05-27 20:42:26,412 - ERROR - Error buscando perfil de LinkedIn para Rocío Portal - Centro Nutrición y Psicología en Vigo: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DRoc%25C3%25ADo%2BPortal%2B-%2BCentro%2BNutrici%25C3%25B3n%2By%2BPsicolog%25C3%25ADa%2Ben%2BVigo%2Bsite%253Alinkedin.com%252Fcompany%26num%3D3%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GJGP2MEGIjD_G7CpGiZOxqR4ML3CUuj2YYjmEeY1f08Mq8m_Hn1ykDE091nR0teJ9Jeq4Ij-TscyAnJSWgFD
+2025-05-27 20:42:27,625 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:42:27,627 - INFO - Scrapeando https://concienciacomo.com/
+2025-05-27 20:42:32,899 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:42:47,757 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:42:48,324 - ERROR - Error buscando número de empleados para Nutrición Beatriz Dosdá. Dietista-Nutricionista Consultas PRESENCIALES Y ONLINE.: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DNutrici%25C3%25B3n%2BBeatriz%2BDosd%25C3%25A1.%2BDietista-Nutricionista%2BConsultas%2BPRESENCIALES%2BY%2BONLINE.%2Bnumber%2Bof%2Bemployees%2Bsite%253Alinkedin.com%26num%3D5%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GKeP2MEGIjB-bMcVdrFsW_nkwYcRO4CnjaC6jhvnGxV1Y7CW4d5GpVmLYaCnjbz0gXo1ltjFAUoyAnJSWgFD
+2025-05-27 20:42:49,025 - ERROR - Error buscando perfil de LinkedIn para Nutrición Beatriz Dosdá. Dietista-Nutricionista Consultas PRESENCIALES Y ONLINE.: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DNutrici%25C3%25B3n%2BBeatriz%2BDosd%25C3%25A1.%2BDietista-Nutricionista%2BConsultas%2BPRESENCIALES%2BY%2BONLINE.%2Bsite%253Alinkedin.com%252Fcompany%26num%3D3%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GKiP2MEGIjBkizXhuL9AGQm38fVEeLis35-8-zn1mPbP7w-2kv6dOQerQhqivZhi0OSt7mNTxaAyAnJSWgFD
+2025-05-27 20:43:00,047 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:43:00,049 - INFO - Scrapeando http://www.cienporciensaludable.com/
+2025-05-27 20:43:03,935 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:43:14,573 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:43:15,021 - ERROR - Error buscando número de empleados para Sernuga - 100% Saludable: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DSernuga%2B-%2B100%2525%2BSaludable%2Bnumber%2Bof%2Bemployees%2Bsite%253Alinkedin.com%26num%3D5%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GMKP2MEGIjANcWBrAhVXyeEZQgrFJTR-U7CWx7d7J_j9jlUh7f9oIk2ie_MKNiBAloLi9Wt3K2AyAnJSWgFD
+2025-05-27 20:43:15,491 - ERROR - Error buscando perfil de LinkedIn para Sernuga - 100% Saludable: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DSernuga%2B-%2B100%2525%2BSaludable%2Bsite%253Alinkedin.com%252Fcompany%26num%3D3%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GMOP2MEGIjB5ozwbjb9j7HGn775kFfQP2QwybI8EOrRYnGs2s5Wi_HU9tEWWoYZnN-Oh4uCiQ3MyAnJSWgFD
+2025-05-27 20:43:16,429 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:43:16,431 - INFO - Scrapeando http://santigrobanutricion.com/
+2025-05-27 20:43:21,467 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:43:36,705 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:43:37,373 - ERROR - Error buscando número de empleados para Santi Groba Nutrición: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DSanti%2BGroba%2BNutrici%25C3%25B3n%2Bnumber%2Bof%2Bemployees%2Bsite%253Alinkedin.com%26num%3D5%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GNiP2MEGIjAeieaXoJ1fG_r4xzlJiHKI5KbKRgNrnZuZ1YC9aBpDky1QGLqS5XTOi_eNRavlBdgyAnJSWgFD
+2025-05-27 20:43:37,994 - ERROR - Error buscando perfil de LinkedIn para Santi Groba Nutrición: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DSanti%2BGroba%2BNutrici%25C3%25B3n%2Bsite%253Alinkedin.com%252Fcompany%26num%3D3%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GNmP2MEGIjC4pdF_AZ9SgngvJoWXS4OXmAotTmzii0SK_c3CgFklvfxIPtUsn8BBzUtG1VuneFcyAnJSWgFD
+2025-05-27 20:43:38,752 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:43:38,754 - INFO - Scrapeando http://khalos.com/
+2025-05-27 20:43:43,261 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:43:55,958 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:43:56,423 - ERROR - Error buscando número de empleados para Khalos: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DKhalos%2Bnumber%2Bof%2Bemployees%2Bsite%253Alinkedin.com%26num%3D5%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GOyP2MEGIjAcSLa9Sp0w1ZF1WqkJ5IMeqSqIrS-ObETy-Ycj6TTguy5mMJDy-IynHOij9uywgGAyAnJSWgFD
+2025-05-27 20:43:56,933 - ERROR - Error buscando perfil de LinkedIn para Khalos: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DKhalos%2Bsite%253Alinkedin.com%252Fcompany%26num%3D3%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GOyP2MEGIjCJc0UORMKkLZrzMn5bUNya-khShGZueCbb6fzNRx1ZorjE5H-4f-dbHgqtXod1htYyAnJSWgFD
+2025-05-27 20:43:57,596 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:43:57,598 - INFO - Scrapeando http://www.dietaconcabeza.es/
+2025-05-27 20:44:00,317 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:44:11,522 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:44:12,188 - ERROR - Error buscando número de empleados para Dieta con Cabeza - Uxía Rodríguez - Dietista Vigo: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DDieta%2Bcon%2BCabeza%2B-%2BUx%25C3%25ADa%2BRodr%25C3%25ADguez%2B-%2BDietista%2BVigo%2Bnumber%2Bof%2Bemployees%2Bsite%253Alinkedin.com%26num%3D5%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GPuP2MEGIjAmr8T88dEMP9G4XipBTPNC5vscjCGRZ7wyGYjO0eFsu-teheVZrU3Pz7bya11xVHIyAnJSWgFD
+2025-05-27 20:44:12,809 - ERROR - Error buscando perfil de LinkedIn para Dieta con Cabeza - Uxía Rodríguez - Dietista Vigo: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DDieta%2Bcon%2BCabeza%2B-%2BUx%25C3%25ADa%2BRodr%25C3%25ADguez%2B-%2BDietista%2BVigo%2Bsite%253Alinkedin.com%252Fcompany%26num%3D3%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GPyP2MEGIjAw0kCV81rOU_RoiT6rbIDDISxYlDMOy1PKukt4pPuKUCByYHN19XsOZNFrZ5arzYUyAnJSWgFD
+2025-05-27 20:44:14,213 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:44:14,214 - INFO - Scrapeando https://yuvnutricion.es/
+2025-05-27 20:44:17,560 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:44:27,904 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:44:28,565 - ERROR - Error buscando número de empleados para Asesoramiento dietético YUV Nutrición: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DAsesoramiento%2Bdiet%25C3%25A9tico%2BYUV%2BNutrici%25C3%25B3n%2Bnumber%2Bof%2Bemployees%2Bsite%253Alinkedin.com%26num%3D5%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GIyQ2MEGIjDtrq6iRqyO0pSHz8AFLDW7dOO65vH0402Eul4yKiJ0mA3WsVwTsOqUAa4eAyUQvcgyAnJSWgFD
+2025-05-27 20:44:29,087 - ERROR - Error buscando perfil de LinkedIn para Asesoramiento dietético YUV Nutrición: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DAsesoramiento%2Bdiet%25C3%25A9tico%2BYUV%2BNutrici%25C3%25B3n%2Bsite%253Alinkedin.com%252Fcompany%26num%3D3%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GIyQ2MEGIjBSjW5-0ME5kUEagvvgsp4NBtaWtq6Z6ZTfpYfHwWleRKS_TaGGUqs2UPXDHyJhkokyAnJSWgFD
+2025-05-27 20:44:29,668 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:44:29,670 - WARNING - Empresa sin URL: Dietista Online en Vigo. Laura de la Iglesia. Nutrición y dietética en "The invisible Center"
+2025-05-27 20:44:29,671 - INFO - Scrapeando http://saludprogresa.com/
+2025-05-27 20:44:36,403 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:44:48,793 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:44:49,566 - ERROR - Error buscando número de empleados para Progresa Centro Integral de Salud: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DProgresa%2BCentro%2BIntegral%2Bde%2BSalud%2Bnumber%2Bof%2Bemployees%2Bsite%253Alinkedin.com%26num%3D5%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GKCQ2MEGIjBrD0FaRRCIBORMuOgyrDqLDPlA5i5FRv9HczCbHPayk8dGxHWsjVsvwCx73YB3LxUyAnJSWgFD
+2025-05-27 20:44:50,086 - ERROR - Error buscando perfil de LinkedIn para Progresa Centro Integral de Salud: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DProgresa%2BCentro%2BIntegral%2Bde%2BSalud%2Bsite%253Alinkedin.com%252Fcompany%26num%3D3%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GKGQ2MEGIjC_F78lE4nTLj7nD9iTsdi_dN48ZjiWw-FNbVc6kitUCI_qDuplaTq33NKZka_HGjwyAnJSWgFD
+2025-05-27 20:44:58,255 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:44:58,315 - INFO - Scrapeando https://www.searanutricionistavigo.com/
+2025-05-27 20:45:04,412 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:45:15,111 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:45:15,762 - ERROR - Error buscando número de empleados para Nutricionista Gloria Lorenzo: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DNutricionista%2BGloria%2BLorenzo%2Bnumber%2Bof%2Bemployees%2Bsite%253Alinkedin.com%26num%3D5%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GLuQ2MEGIjBXXUJ3loaW5EVJENJpIlp4rzTq6QmeSSxCkkPjsi2g-CBOEO9OCo29Pyn34tc9qRkyAnJSWgFD
+2025-05-27 20:45:16,393 - ERROR - Error buscando perfil de LinkedIn para Nutricionista Gloria Lorenzo: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DNutricionista%2BGloria%2BLorenzo%2Bsite%253Alinkedin.com%252Fcompany%26num%3D3%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GLuQ2MEGIjAguKpim6lhcS0HR-5yE80laKlFtrBCX5ZIiGBudVxXQZkNYDmoVthpFUXGpSYT4J8yAnJSWgFD
+2025-05-27 20:45:17,674 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:45:17,677 - INFO - Scrapeando http://www.sumavigo.com/
+2025-05-27 20:45:22,998 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:45:36,206 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:45:36,974 - ERROR - Error buscando número de empleados para Centro Suma: Fisioterapia, Nutrición y Psicología: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DCentro%2BSuma%253A%2BFisioterapia%252C%2BNutrici%25C3%25B3n%2By%2BPsicolog%25C3%25ADa%2Bnumber%2Bof%2Bemployees%2Bsite%253Alinkedin.com%26num%3D5%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GNCQ2MEGIjCGIoCGiQ3tMvWYutfI8-Fdhs0_6HP8kM7RvBv7WYJN490e9fmAb2fW4fBqp_Gp2j0yAnJSWgFD
+2025-05-27 20:45:37,584 - ERROR - Error buscando perfil de LinkedIn para Centro Suma: Fisioterapia, Nutrición y Psicología: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DCentro%2BSuma%253A%2BFisioterapia%252C%2BNutrici%25C3%25B3n%2By%2BPsicolog%25C3%25ADa%2Bsite%253Alinkedin.com%252Fcompany%26num%3D3%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GNGQ2MEGIjDej5yb0LCaPjAx61tkl8zeDtfpqXR6zv2GGG8BlVnGS70I17460GP6opVnL5FwaRsyAnJSWgFD
+2025-05-27 20:45:46,415 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:45:46,418 - INFO - Scrapeando http://www.doctoracarmenbravo.com/
+2025-05-27 20:45:50,859 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:46:03,036 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:46:03,713 - ERROR - Error buscando número de empleados para Consulta Doctora Carmen Bravo: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DConsulta%2BDoctora%2BCarmen%2BBravo%2Bnumber%2Bof%2Bemployees%2Bsite%253Alinkedin.com%26num%3D5%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GOuQ2MEGIjAmM7H_MVRwBadrMt4CB4NHzNsQQ6YCDg3unemSQtGYrdNocYwq7H5FREmr-SvJ0MMyAnJSWgFD
+2025-05-27 20:46:04,331 - ERROR - Error buscando perfil de LinkedIn para Consulta Doctora Carmen Bravo: 429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DConsulta%2BDoctora%2BCarmen%2BBravo%2Bsite%253Alinkedin.com%252Fcompany%26num%3D3%26hl%3Den%26start%3D0%26safe%3Dactive&hl=en&q=EgRVV1c2GOuQ2MEGIjCqxhCE8mqSHE3Y5xduD7dtCg1BMdW-9_MbVo6ATJXvEb0Edb1dlTKo-LIttiVawf8yAnJSWgFD
+2025-05-27 20:46:05,083 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:46:05,088 - INFO - Procesadas 20 empresas
