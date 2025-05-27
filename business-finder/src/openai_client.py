@@ -71,4 +71,34 @@ class OpenAIClient:
             return response.choices[0].message.content.strip()
         except Exception as e:
             print(f"Error al analizar colores con OpenAI: {e}")
+            return None
+
+    def determinar_industria(self, descripcion: str) -> Optional[str]:
+        """
+        Determina el sector industrial principal de una empresa basado en su descripción.
+        
+        Args:
+            descripcion: Descripción de la empresa
+            
+        Returns:
+            String con el nombre del sector industrial o None si hay error
+        """
+        prompt = (
+            "Analiza la siguiente descripción de empresa y determina su sector industrial principal.\n"
+            "Básate en los términos recogidos en el CNAE: en base a la descripción de la empresa, qué CNAE le corresponde\n"
+            "IMPORTANTE: Responde SOLO con el nombre del sector según el CNAE, sin explicaciones adicionales.\n"
+            "Descripción:\n" + descripcion
+        )
+        try:
+            response = openai.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=50,
+                temperature=0.3
+            )
+            industria = response.choices[0].message.content.strip()
+            return industria
+            
+        except Exception as e:
+            print(f"Error al determinar industria con OpenAI: {e}")
             return None 

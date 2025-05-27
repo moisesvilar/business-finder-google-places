@@ -109,6 +109,12 @@ class BusinessFinder:
             # Añadir resumen
             company['resumen'] = resumen
             
+            # Determinar industria basada en el resumen
+            if resumen:
+                industria = self.openai_client.determinar_industria(resumen)
+                if industria:
+                    company['industry'] = industria
+            
             # Integración con Notion
             insert_company_to_notion(company)
             
