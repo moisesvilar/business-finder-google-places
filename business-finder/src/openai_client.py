@@ -19,6 +19,7 @@ class OpenAIClient:
     def resumir_texto(self, texto: str, max_tokens: int = 300) -> Optional[str]:
         """
         Genera un resumen profesional del texto usando OpenAI GPT-3.5 Turbo.
+        El resumen está limitado a 2000 caracteres.
         """
         prompt = (
             "Analiza el siguiente texto y genera un resumen profesional que incluya:\n"
@@ -26,7 +27,8 @@ class OpenAIClient:
             "- Servicios/productos principales\n"
             "- Público objetivo\n"
             "- Ventajas competitivas\n"
-            "Máximo 3 párrafos, en español, sin inventar información.\n\n" + texto
+            "Hazlo en español, sin inventar información.\n"
+            "IMPORTANTE: El resumen NO debe exceder los 2000 caracteres.\n\n" + texto
         )
         try:
             response = openai.chat.completions.create(
@@ -35,7 +37,14 @@ class OpenAIClient:
                 max_tokens=max_tokens,
                 temperature=0.5
             )
-            return response.choices[0].message.content.strip()
+            resumen = response.choices[0].message.content.strip()
+            
+            # Limitar estrictamente a 2000 caracteres
+            if len(resumen) > 2000:
+                resumen = resumen[:1997] + "..."
+                
+            return resumen
+            
         except Exception as e:
             print(f"Error al generar resumen con OpenAI: {e}")
             return None
