@@ -857,3 +857,11 @@ response headers:
 2025-05-27 20:17:07,890 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2025-05-27 20:17:10,039 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
 2025-05-27 20:17:10,040 - INFO - Scrapeando https://gestionet.net/
+2025-05-27 20:17:20,483 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:17:31,901 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:17:35,175 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:17:35,175 - INFO - Scrapeando http://www.nts-solutions.com/
+2025-05-27 20:17:38,198 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:17:51,101 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:17:52,403 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:17:52,405 - INFO - Procesadas 3 empresas
