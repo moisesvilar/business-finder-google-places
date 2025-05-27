@@ -118,14 +118,14 @@ class BusinessFinder:
             logging.error(f"Error procesando {company.get('name')}: {e}")
             return company
     
-    def find_businesses(self, query: str, location: str = None) -> None:
+    def find_businesses(self, query: str, location: str = None, max_results: int = 100) -> None:
         """
         Busca empresas y procesa cada una.
         """
         try:
             # Buscar empresas
             logging.info(f"Buscando empresas: {query} en {location or 'todo el mundo'}")
-            businesses = self.google_client.search_business(query, location)
+            businesses = self.google_client.search_business(query, location, max_results)
             
             if not businesses:
                 logging.warning("No se encontraron empresas")
@@ -150,10 +150,11 @@ def main():
     parser = argparse.ArgumentParser(description='Buscador de empresas usando Google Places API.')
     parser.add_argument('--query', type=str, default="empresas de tecnología", help='Término de búsqueda para empresas.')
     parser.add_argument('--location', type=str, default="Madrid", help='Ubicación para la búsqueda (ej: "Madrid, Spain").')
+    parser.add_argument('--max-results', type=int, default=100, help='Número máximo de resultados a obtener.')
     args = parser.parse_args()
 
     finder = BusinessFinder()
-    finder.find_businesses(args.query, args.location)
+    finder.find_businesses(args.query, args.location, args.max_results)
 
 if __name__ == "__main__":
     main() 
