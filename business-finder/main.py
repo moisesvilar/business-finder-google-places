@@ -4,6 +4,7 @@ import logging
 from typing import List, Dict, Any
 from datetime import datetime
 import argparse
+import json
 
 # Añadir src al path
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
@@ -52,7 +53,7 @@ class BusinessFinder:
                 return company
                 
             # Convertir a markdown y generar resumen
-            markdown, scraped_content = self.web_scraper.html_to_markdown(html, company.get('website'))
+            markdown, scraped_content, firecrawl_response = self.web_scraper.html_to_markdown(html, company.get('website'))
             resumen = self.openai_client.resumir_texto(markdown)
             
             # Guardar markdown en archivo
@@ -68,6 +69,20 @@ class BusinessFinder:
             s3_markdown_key = f"markdown/{markdown_filename}"
             s3_markdown_url = self.s3_client.upload_file(markdown_path, s3_markdown_key)
             company['markdown_url'] = s3_markdown_url
+            
+            # Guardar respuesta de Firecrawl en JSON
+            if firecrawl_response:
+                json_filename = f"{company_name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+                json_path = os.path.join("tmp", "json", json_filename)
+                os.makedirs(os.path.dirname(json_path), exist_ok=True)
+                
+                with open(json_path, 'w', encoding='utf-8') as f:
+                    json.dump(firecrawl_response, f, ensure_ascii=False, indent=2)
+                
+                # Subir JSON a S3
+                s3_json_key = f"json/{json_filename}"
+                s3_json_url = self.s3_client.upload_file(json_path, s3_json_key)
+                company['firecrawl_json_url'] = s3_json_url
             
             # Extraer y subir logo
             logo_url = self.web_scraper.extract_logo_url(html)

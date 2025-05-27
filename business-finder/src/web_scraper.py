@@ -1,12 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
-from typing import Optional, Tuple
+from typing import Optional, Tuple, Dict
 import os
 from screenshot import ScreenshotTaker
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import logging
+import asyncio
+from firecrawl import AsyncFirecrawlApp
 
 try:
     import html2text
@@ -16,6 +18,7 @@ except ImportError:
 class WebScraper:
     def __init__(self, timeout: int = 10):
         self.timeout = timeout
+        self.firecrawl = AsyncFirecrawlApp(api_key=os.getenv("FIRECRAWL_API_TOKEN"))
 
     def fetch_html(self, url: str) -> Optional[str]:
         """Descarga el HTML de una web."""
@@ -30,43 +33,39 @@ class WebScraper:
             print(f"Error al descargar HTML: {e}")
             return None
 
-    def html_to_markdown(self, html: str, url: str) -> Tuple[str, str]:
-        """Convierte HTML a Markdown usando Firecrawl y devuelve tanto el markdown como el contenido scrapeado."""
+    def html_to_markdown(self, html: str, url: str) -> Tuple[str, str, Dict]:
+        """
+        Convierte HTML a Markdown usando Firecrawl y devuelve el markdown, contenido scrapeado y la respuesta completa.
+        
+        Returns:
+            Tuple[str, str, Dict]: (markdown, contenido scrapeado, respuesta completa de Firecrawl)
+        """
         try:
-            api_url = "https://api.firecrawl.dev/v1/scrape"
-            headers = {
-                'Authorization': f'Bearer {os.getenv("FIRECRAWL_API_TOKEN")}',
-                'Content-Type': 'application/json'
-            }
+            # Ejecutar la llamada asíncrona de Firecrawl
+            response = asyncio.run(self.firecrawl.scrape_url(
+                url=url,
+                formats=['markdown', 'text'],
+                only_main_content=True,
+                block_ads=True,
+                timeout=30000
+            ))
             
-            data = {
-                "url": url,
-                "formats": ["markdown", "text"],
-                "onlyMainContent": True,
-                "blockAds": True,
-                "timeout": 30000
-            }
-            
-            response = requests.post(api_url, headers=headers, json=data)
-            
-            if response.status_code == 200:
-                result = response.json()
-                if result.get('success') and 'data' in result:
-                    markdown = result['data'].get('markdown', '')
-                    scraped_content = result['data'].get('text', '')
-                    return markdown, scraped_content
+            if response.get('success') and 'data' in response:
+                markdown = response['data'].get('markdown', '')
+                scraped_content = response['data'].get('text', '')
+                return markdown, scraped_content, response
             
             # Fallback: solo texto plano si falla la API
             soup = BeautifulSoup(html, 'html.parser')
             text = soup.get_text(separator='\n')
-            return text, text
+            return text, text, {}
             
         except Exception as e:
-            print(f"Error al convertir HTML a Markdown con Firecrawl: {e}")
+            logging.error(f"Error al convertir HTML a Markdown con Firecrawl: {e}")
             # Fallback: solo texto plano
             soup = BeautifulSoup(html, 'html.parser')
             text = soup.get_text(separator='\n')
-            return text, text
+            return text, text, {}
 
     def extract_logo_url(self, html: str, base_url: str = "") -> Optional[str]:
         """Intenta extraer la URL del logotipo de la web."""
@@ -102,7 +101,7 @@ class WebScraper:
         html = self.fetch_html(url)
         if not html:
             return None, None
-        markdown, scraped_content = self.html_to_markdown(html, url)
+        markdown, scraped_content, response = self.html_to_markdown(html, url)
         logo_url = self.extract_logo_url(html, base_url=url)
         return markdown, logo_url
 
