@@ -1,0 +1,41 @@
+2025-05-27 18:44:18,103 - INFO - API queries_quota: 60
+2025-05-27 18:44:18,193 - INFO - Buscando empresas: empresas de tecnología en Madrid
+2025-05-27 18:44:19,970 - INFO - Scrapeando https://qaroni.com/
+2025-05-27 18:44:24,937 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 18:44:25,596 - INFO - ====== WebDriver manager ======
+2025-05-27 18:44:25,770 - INFO - Get LATEST geckodriver version for 138.0 firefox
+2025-05-27 18:44:26,250 - INFO - Get LATEST geckodriver version for 138.0 firefox
+2025-05-27 18:44:26,523 - INFO - Driver [/Users/moisesvilar/.wdm/drivers/geckodriver/mac64/v0.36.0/geckodriver] found in cache
+2025-05-27 18:49:00,371 - INFO - API queries_quota: 60
+2025-05-27 18:49:00,460 - INFO - Buscando empresas: empresas de tecnología en Madrid
+2025-05-27 18:49:02,388 - INFO - Scrapeando https://qaroni.com/
+2025-05-27 18:49:07,358 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 18:49:07,986 - INFO - ====== WebDriver manager ======
+2025-05-27 18:49:08,139 - INFO - Get LATEST geckodriver version for 138.0 firefox
+2025-05-27 18:49:08,606 - INFO - Get LATEST geckodriver version for 138.0 firefox
+2025-05-27 18:49:08,882 - INFO - Driver [/Users/moisesvilar/.wdm/drivers/geckodriver/mac64/v0.36.0/geckodriver] found in cache
+2025-05-27 18:49:50,158 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x11a72f9d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/97b3e942-6575-4bb8-a2b3-9ca6e4a37e17
+2025-05-27 18:49:50,159 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x11a72fed0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/97b3e942-6575-4bb8-a2b3-9ca6e4a37e17
+2025-05-27 18:49:50,160 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x11a71aea0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/97b3e942-6575-4bb8-a2b3-9ca6e4a37e17
+2025-05-27 18:49:52,186 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 18:49:52,190 - INFO - Scrapeando http://www.docuten.com/
+2025-05-27 18:49:55,992 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 18:49:56,991 - INFO - ====== WebDriver manager ======
+2025-05-27 18:49:57,175 - INFO - Get LATEST geckodriver version for 138.0 firefox
+2025-05-27 18:49:57,583 - INFO - Get LATEST geckodriver version for 138.0 firefox
+2025-05-27 18:49:57,901 - INFO - Driver [/Users/moisesvilar/.wdm/drivers/geckodriver/mac64/v0.36.0/geckodriver] found in cache
+2025-05-27 18:51:46,583 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 18:51:46,587 - INFO - Scrapeando https://www.plexus.es/
+2025-05-27 18:51:47,869 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x11a9c9f20>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/7b33e913-9065-4bd2-a31a-f2fa6750d9d8
+2025-05-27 18:51:47,871 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x11a9caf10>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/7b33e913-9065-4bd2-a31a-f2fa6750d9d8
+2025-05-27 18:51:47,872 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x11a9caad0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/7b33e913-9065-4bd2-a31a-f2fa6750d9d8
+2025-05-27 18:51:50,884 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 18:51:51,469 - INFO - ====== WebDriver manager ======
+2025-05-27 18:51:51,644 - INFO - Get LATEST geckodriver version for 138.0 firefox
+2025-05-27 18:51:52,096 - INFO - Get LATEST geckodriver version for 138.0 firefox
+2025-05-27 18:51:52,356 - INFO - Driver [/Users/moisesvilar/.wdm/drivers/geckodriver/mac64/v0.36.0/geckodriver] found in cache
+2025-05-27 18:52:06,160 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x11a83e8b0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/64c7ef89-83a8-48f5-b1df-79734f618b7f
+2025-05-27 18:52:06,161 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x11a9ca250>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/64c7ef89-83a8-48f5-b1df-79734f618b7f
+2025-05-27 18:52:06,162 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x11a9ca140>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/64c7ef89-83a8-48f5-b1df-79734f618b7f
+2025-05-27 18:52:08,781 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 18:52:08,789 - INFO - Procesadas 3 empresas
