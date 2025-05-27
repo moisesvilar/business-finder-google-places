@@ -893,3 +893,12 @@ response headers:
 2025-05-27 20:38:12,343 - INFO - Scrapeando https://luciaterzi.com/
 2025-05-27 20:38:22,351 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2025-05-27 20:38:33,501 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:39:22,210 - INFO - API queries_quota: 60
+2025-05-27 20:39:22,282 - INFO - Buscando empresas: clínicas de nutrición en 42.22671735164634,-8.715127103115554
+2025-05-27 20:39:24,304 - INFO - Scrapeando http://nutrisalud.es/
+2025-05-27 20:39:28,302 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:39:38,406 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:39:40,169 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:39:40,171 - WARNING - Empresa sin URL: Clínica adelgazamiento Dra. Sotelo
+2025-05-27 20:39:40,172 - WARNING - Empresa sin URL: Clinica Dr. Hortas
+2025-05-27 20:39:40,173 - INFO - Procesadas 3 empresas
