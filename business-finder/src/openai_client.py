@@ -74,12 +74,6 @@ class OpenAIClient:
                     break
                 time.sleep(1)
             
-            # Log del prompt
-            print("\n=== PROMPT ENVIADO A OPENAI ===")
-            print("Input:", "Analiza el contenido del archivo y genera un resumen profesional y conciso de la empresa.")
-            print("Vector Store ID:", vector_store_id)
-            print("==============================\n")
-            
             response = self.client.responses.create(
                 model="gpt-4-turbo-preview",
                 input="Analiza el contenido del archivo y genera un resumen profesional y conciso de la empresa.",
@@ -89,11 +83,6 @@ class OpenAIClient:
                 }],
                 include=["file_search_call.results"]
             )
-            
-            # Log de la respuesta
-            print("\n=== RESPUESTA DE OPENAI ===")
-            print("Response:", json.dumps(response.model_dump(), indent=2, ensure_ascii=False))
-            print("==========================\n")
             
             # Extraer el texto del resumen de la respuesta
             for output in response.output:
