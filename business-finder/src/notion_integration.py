@@ -37,9 +37,13 @@ def insert_company_to_notion(company_data):
         # Añadir industria si existe
         if company_data.get('industry'):
             properties['Primary industry'] = {'select': {'name': company_data['industry']}}
+        elif company_data.get('query'):
+            # Usar la query de búsqueda como industria por defecto
+            industry = company_data['query'].replace('empresas de ', '').replace('empresas ', '').strip()
+            properties['Primary industry'] = {'select': {'name': industry}}
         else:
-            # Si no hay industria específica, usar "Technology" por defecto
-            properties['Primary industry'] = {'select': {'name': 'Technology'}}
+            # Si no hay industria ni query, usar "Other"
+            properties['Primary industry'] = {'select': {'name': 'Other'}}
         
         new_page = {
             'parent': {'database_id': database_id},

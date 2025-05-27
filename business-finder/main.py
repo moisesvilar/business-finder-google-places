@@ -133,8 +133,9 @@ class BusinessFinder:
                 
             # Procesar cada empresa
             processed_data = []
-            # for business in businesses[:3]:
-            for business in businesses:
+            for business in businesses[:3]:
+                # Añadir la query de búsqueda a los datos de la empresa
+                business['query'] = query
                 processed = self.process_company(business)
                 processed_data.append(processed)
             

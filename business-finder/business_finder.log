@@ -865,3 +865,31 @@ response headers:
 2025-05-27 20:17:51,101 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2025-05-27 20:17:52,403 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
 2025-05-27 20:17:52,405 - INFO - Procesadas 3 empresas
+2025-05-27 20:35:41,745 - INFO - API queries_quota: 60
+2025-05-27 20:35:41,846 - INFO - Buscando empresas: clínicas de nutrición en Vigo, Spain
+2025-05-27 20:35:44,472 - INFO - Scrapeando https://sabeavidanutricion.com/
+2025-05-27 20:35:50,490 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:36:01,673 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:36:03,692 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:36:03,693 - INFO - Scrapeando https://nutricionnervion.es/dietista-nutricionista/barakaldo/?utm_source=google&utm_medium=GBP&utm_campaign=web
+2025-05-27 20:36:12,709 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:36:23,052 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:37:03,303 - INFO - API queries_quota: 60
+2025-05-27 20:37:03,379 - INFO - Buscando empresas: clínicas de nutrición en 42.22671735164634,-8.715127103115554
+2025-05-27 20:37:05,803 - INFO - Scrapeando http://nutrisalud.es/
+2025-05-27 20:37:16,889 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:37:26,815 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:37:28,529 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:37:28,531 - WARNING - Empresa sin URL: Clinica Dr. Hortas
+2025-05-27 20:37:28,531 - INFO - Scrapeando http://www.nutrendo.es/
+2025-05-27 20:37:32,210 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:37:43,234 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:37:45,735 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:37:45,738 - WARNING - Empresa sin URL: Clínica adelgazamiento Dra. Sotelo
+2025-05-27 20:37:45,738 - INFO - Scrapeando http://www.rocioportalnutricion.com/
+2025-05-27 20:37:56,030 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:38:10,674 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:38:12,342 - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2025-05-27 20:38:12,343 - INFO - Scrapeando https://luciaterzi.com/
+2025-05-27 20:38:22,351 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 20:38:33,501 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
