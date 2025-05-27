@@ -44,7 +44,7 @@ class WebScraper:
             # Ejecutar la llamada asíncrona de Firecrawl
             response = asyncio.run(self.firecrawl.scrape_url(
                 url=url,
-                formats=['markdown', 'text'],
+                formats=['markdown', 'html'],  # Solo formatos permitidos
                 only_main_content=True,
                 block_ads=True,
                 timeout=30000
@@ -52,7 +52,8 @@ class WebScraper:
             
             if response.get('success') and 'data' in response:
                 markdown = response['data'].get('markdown', '')
-                scraped_content = response['data'].get('text', '')
+                # Usar el HTML como contenido scrapeado
+                scraped_content = response['data'].get('html', '')
                 return markdown, scraped_content, response
             
             # Fallback: solo texto plano si falla la API

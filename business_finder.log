@@ -39,3 +39,7 @@
 2025-05-27 18:52:06,162 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x11a9ca140>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/64c7ef89-83a8-48f5-b1df-79734f618b7f
 2025-05-27 18:52:08,781 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2025-05-27 18:52:08,789 - INFO - Procesadas 3 empresas
+2025-05-27 23:05:19,890 - INFO - API queries_quota: 60
+2025-05-27 23:05:19,972 - INFO - Buscando empresas: Empresas en Vigo, GA, Spain
+2025-05-27 23:05:31,634 - INFO - Scrapeando http://grupoppa.es/
+2025-05-27 23:05:34,056 - ERROR - Error al convertir HTML a Markdown con Firecrawl: Unexpected error during make POST request: Status code 400. Bad Request - [{'received': 'text', 'code': 'invalid_enum_value', 'options': ['markdown', 'html', 'rawHtml', 'links', 'screenshot', 'screenshot@fullPage', 'extract', 'json', 'changeTracking'], 'path': ['formats', 1], 'message': "Invalid enum value. Expected 'markdown' | 'html' | 'rawHtml' | 'links' | 'screenshot' | 'screenshot@fullPage' | 'extract' | 'json' | 'changeTracking', received 'text'"}]

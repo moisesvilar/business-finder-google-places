@@ -139,9 +139,15 @@ class BusinessFinder:
             logging.error(f"Error procesando {company.get('name')}: {e}")
             return company
     
-    def find_businesses(self, query: str, location: str = None, max_results: int = 100) -> None:
+    def find_businesses(self, query: str, location: str = None, max_results: int = 100, limit: int = None) -> None:
         """
         Busca empresas y procesa cada una.
+        
+        Args:
+            query: Término de búsqueda
+            location: Ubicación para la búsqueda
+            max_results: Número máximo de resultados a obtener de Google Places
+            limit: Número máximo de empresas a procesar (opcional)
         """
         try:
             # Buscar empresas
@@ -151,6 +157,11 @@ class BusinessFinder:
             if not businesses:
                 logging.warning("No se encontraron empresas")
                 return
+                
+            # Aplicar límite si se especificó
+            if limit is not None:
+                businesses = businesses[:limit]
+                logging.info(f"Limitando procesamiento a {limit} empresas")
                 
             # Procesar cada empresa
             processed_data = []
@@ -172,10 +183,11 @@ def main():
     parser.add_argument('--query', type=str, default="empresas de tecnología", help='Término de búsqueda para empresas.')
     parser.add_argument('--location', type=str, default="Madrid", help='Ubicación para la búsqueda (ej: "Madrid, Spain").')
     parser.add_argument('--max-results', type=int, default=100, help='Número máximo de resultados a obtener.')
+    parser.add_argument('--limit', type=int, help='Número máximo de empresas a procesar. Si no se especifica, se procesan todas.')
     args = parser.parse_args()
 
     finder = BusinessFinder()
-    finder.find_businesses(args.query, args.location, args.max_results)
+    finder.find_businesses(args.query, args.location, args.max_results, args.limit)
 
 if __name__ == "__main__":
     main() 
