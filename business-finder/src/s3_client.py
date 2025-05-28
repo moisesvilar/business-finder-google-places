@@ -19,10 +19,6 @@ class S3Client:
         
         if not all([self.aws_access_key, self.aws_secret_key, self.bucket_name]):
             raise ValueError("Faltan credenciales de AWS o nombre del bucket")
-            
-        # Logging seguro (solo mostrar que las credenciales están presentes)
-        logging.info("Credenciales AWS configuradas correctamente")
-        logging.info(f"Bucket S3: {self.bucket_name}")
         
         self.s3 = boto3.client(
             's3',
@@ -44,7 +40,6 @@ class S3Client:
         try:
             self.s3.upload_file(file_path, self.bucket_name, s3_key)
             url = f"https://{self.bucket_name}.s3.amazonaws.com/{s3_key}"
-            logging.info(f"Archivo subido a S3: {s3_key}")
             return url
             
         except Exception as e:

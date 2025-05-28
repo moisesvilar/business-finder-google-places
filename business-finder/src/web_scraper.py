@@ -47,9 +47,9 @@ class WebScraper:
                 clean[k] = [self._clean_dict(i) if isinstance(i, dict) else i for i in v]
         return clean
 
-    def html_to_markdown(self, html: str, url: str) -> Tuple[str, str, Dict]:
+    def scrape_url(self, url: str) -> Dict:
         """
-        Convierte HTML a Markdown usando Firecrawl y devuelve el markdown, contenido scrapeado y la respuesta completa.
+        Scrapea una web usando Firecrawl
         
         Returns:
             Tuple[str, str, Dict]: (markdown, contenido scrapeado, respuesta completa de Firecrawl)
@@ -74,17 +74,7 @@ class WebScraper:
             # Limpiar el diccionario de objetos no serializables
             response_dict = self._clean_dict(response_dict)
 
-            # Extraer markdown y html de la forma más robusta posible
-            markdown = ''
-            scraped_content = ''
-            if 'data' in response_dict:
-                markdown = response_dict['data'].get('markdown', '')
-                scraped_content = response_dict['data'].get('html', '')
-            elif hasattr(response, 'markdown') and hasattr(response, 'html'):
-                markdown = getattr(response, 'markdown', '')
-                scraped_content = getattr(response, 'html', '')
-
-            return markdown, scraped_content, response_dict
+            return response_dict
 
         except Exception as e:
             logging.error(f"Error al convertir HTML a Markdown con Firecrawl: {e}")

@@ -13,6 +13,7 @@ notion = Client(auth=os.getenv('NOTION_SECRET'))
 def insert_company_to_notion(company_data):
     """Inserta una empresa en la base de datos de Notion."""
     try:
+        logging.info(f"Insertando empresa en Notion")
         notion = Client(auth=os.getenv('NOTION_SECRET'))
         database_id = os.getenv('NOTION_DATABASE_ID')
         
