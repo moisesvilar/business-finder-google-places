@@ -4,11 +4,16 @@ import sys
 import os
 import time
 import logging
+from dotenv import load_dotenv
+
+# Cargar variables de entorno
+load_dotenv()
+
+# Cargar la API key desde variable de entorno
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 # Añadir el directorio raíz al path de Python
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-from config.config import GOOGLE_API_KEY
 
 class GooglePlacesClient:
     def __init__(self):
