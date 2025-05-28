@@ -23,7 +23,7 @@ class GooglePlacesClient:
         
         Args:
             query: Término de búsqueda
-            location: Ubicación opcional para la búsqueda
+            location: Ubicación opcional para la búsqueda (puede ser nombre de ciudad o coordenadas "lat,lng")
             max_results: Número máximo de resultados a obtener
             radius: Radio de búsqueda en metros desde la ubicación especificada
             
@@ -44,7 +44,20 @@ class GooglePlacesClient:
                 }
                 
                 if location:
-                    search_params['location'] = location
+                    # Si la ubicación son coordenadas, usarlas directamente
+                    if ',' in location and all(c.isdigit() or c in '.,- ' for c in location):
+                        lat, lng = map(float, location.replace(' ', '').split(','))
+                        search_params['location'] = f"{lat},{lng}"
+                    else:
+                        # Si es un nombre de ciudad, geocodificarlo
+                        geocode_result = self.client.geocode(location)
+                        if geocode_result:
+                            lat = geocode_result[0]['geometry']['location']['lat']
+                            lng = geocode_result[0]['geometry']['location']['lng']
+                            search_params['location'] = f"{lat},{lng}"
+                        else:
+                            logging.warning(f"No se pudo geocodificar la ubicación: {location}")
+                            search_params['location'] = location
                     
                 if next_page_token:
                     search_params['page_token'] = next_page_token
