@@ -36,4 +36,5 @@ ENV/
 # Temporary files
 tmp/
 *.log
-*.tmp 
+*.tmp
+output/

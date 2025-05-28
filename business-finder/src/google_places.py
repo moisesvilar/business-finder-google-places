@@ -17,7 +17,7 @@ class GooglePlacesClient:
             raise ValueError("GOOGLE_API_KEY no está configurada")
         self.client = googlemaps.Client(key=GOOGLE_API_KEY)
 
-    def search_business(self, query: str, location: Optional[str] = None, max_results: int = 100) -> List[Dict]:
+    def search_business(self, query: str, location: Optional[str] = None, max_results: int = 100, radius: int = 5000) -> List[Dict]:
         """
         Busca empresas usando la API de Google Places con paginación.
         
@@ -25,6 +25,7 @@ class GooglePlacesClient:
             query: Término de búsqueda
             location: Ubicación opcional para la búsqueda
             max_results: Número máximo de resultados a obtener
+            radius: Radio de búsqueda en metros desde la ubicación especificada
             
         Returns:
             Lista de diccionarios con información de las empresas encontradas
@@ -38,7 +39,8 @@ class GooglePlacesClient:
                 search_params = {
                     'query': query,
                     'type': 'business',
-                    'language': 'es'
+                    'language': 'es',
+                    'radius': radius
                 }
                 
                 if location:

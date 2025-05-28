@@ -47,6 +47,11 @@ class BusinessFinder:
                 logging.warning(f"Empresa sin URL: {company.get('name')}")
                 return company
                 
+            # Ignorar URLs de Facebook
+            if 'facebook.com' in url:
+                logging.warning(f"Ignorando URL de Facebook: {url}")
+                return company
+                
             # Scraping
             logging.info(f"Scrapeando {url}")
             html = self.web_scraper.fetch_html(url)
@@ -141,7 +146,7 @@ class BusinessFinder:
             logging.error(f"Error procesando {company.get('name')}: {e}")
             return company
     
-    def find_businesses(self, query: str, location: str = None, max_results: int = 100, limit: int = None) -> None:
+    def find_businesses(self, query: str, location: str = None, max_results: int = 100, limit: int = None, radius: int = 5000) -> None:
         """
         Busca empresas y procesa cada una.
         
@@ -150,11 +155,12 @@ class BusinessFinder:
             location: Ubicación para la búsqueda
             max_results: Número máximo de resultados a obtener de Google Places
             limit: Número máximo de empresas a procesar (opcional)
+            radius: Radio de búsqueda en metros desde la ubicación especificada
         """
         try:
             # Buscar empresas
-            logging.info(f"Buscando empresas: {query} en {location or 'todo el mundo'}")
-            businesses = self.google_client.search_business(query, location, max_results)
+            logging.info(f"Buscando empresas: {query} en {location or 'todo el mundo'} (radio: {radius}m)")
+            businesses = self.google_client.search_business(query, location, max_results, radius)
             
             if not businesses:
                 logging.warning("No se encontraron empresas")
@@ -188,10 +194,11 @@ def main():
     parser.add_argument('--location', type=str, default="Madrid", help='Ubicación para la búsqueda (ej: "Madrid, Spain").')
     parser.add_argument('--max-results', type=int, default=100, help='Número máximo de resultados a obtener.')
     parser.add_argument('--limit', type=int, help='Número máximo de empresas a procesar. Si no se especifica, se procesan todas.')
+    parser.add_argument('--radius', type=int, default=5000, help='Radio de búsqueda en metros desde la ubicación especificada.')
     args = parser.parse_args()
 
     finder = BusinessFinder()
-    finder.find_businesses(args.query, args.location, args.max_results, args.limit)
+    finder.find_businesses(args.query, args.location, args.max_results, args.limit, args.radius)
 
 if __name__ == "__main__":
     main() 
