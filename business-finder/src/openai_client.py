@@ -74,7 +74,7 @@ class OpenAIClient:
             
             response = self.client.responses.create(
                 model="gpt-4-turbo-preview",
-                input="Analiza el contenido del archivo y genera un resumen profesional y conciso de la empresa.",
+                input="Analiza el contenido del archivo y genera un resumen profesional y conciso de la empresa. IMPORTANTE: el resumen no debe exceder los 2000 caracteres.",
                 tools=[{
                     "type": "file_search",
                     "vector_store_ids": [vector_store_id]
