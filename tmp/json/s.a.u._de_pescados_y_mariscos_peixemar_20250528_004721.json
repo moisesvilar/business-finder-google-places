@@ -1,0 +1,24 @@
+{
+  "url": null,
+  "markdown": "# Servicio desactivado\n\nEste dominio se encuentra temporalmente inactivo. Contacta con tu proveedor.",
+  "html": "<!DOCTYPE html><html xmlns=\"http://www.w3.org/1999/xhtml\">\n\n\n\n<body>\n\n\t<div class=\"paxina-wrapper\"><div class=\"paxina\"><div class=\"paxina-inner\">\n\t\t<div class=\"cabeceira-wrapper\"><div class=\"cabeceira\"><div class=\"cabeceira-inner\">\n\t\t\t<h1>Servicio desactivado</h1>\n\t\t\t<div class=\"avisos\">\n\t\t\t\t<p>Este dominio se encuentra temporalmente inactivo. Contacta con tu proveedor.</p>\n\t\t\t</div>\n\t\t</div></div></div>\n\t\t<div class=\"corpo-wrapper\"><div class=\"corpo\"><div class=\"corpo-inner\"></div></div></div>\n\t</div></div></div>\n\n\n\n</body></html>",
+  "rawHtml": null,
+  "links": null,
+  "extract": null,
+  "screenshot": null,
+  "metadata": {
+    "title": "Servicio desactivado",
+    "scrapeId": "aa4e4f16-6068-4034-92ff-405c6593af40",
+    "sourceURL": "http://masdelmar.es/",
+    "url": "https://gestiondecuenta.com/desactivado/",
+    "statusCode": 200,
+    "proxyUsed": "basic"
+  },
+  "actions": null,
+  "title": null,
+  "description": null,
+  "changeTracking": null,
+  "success": true,
+  "warning": null,
+  "error": null
+}
