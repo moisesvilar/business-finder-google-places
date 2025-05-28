@@ -5,6 +5,7 @@ from typing import List, Dict, Any
 from datetime import datetime
 import argparse
 import json
+import time
 
 # Añadir src al path
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
@@ -171,6 +172,8 @@ class BusinessFinder:
                 business['query'] = query
                 processed = self.process_company(business)
                 processed_data.append(processed)
+                # Pausa de 2 segundos entre cada empresa para evitar rate limits
+                time.sleep(2)
             
             # Guardar todas las empresas en un único CSV
             self.csv_writer.write_companies(processed_data)
