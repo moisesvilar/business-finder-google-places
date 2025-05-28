@@ -50,14 +50,12 @@ class OpenAIClient:
                     purpose="assistants"
                 )
             file_id = file_result.id
-            logging.info(f"Archivo subido a OpenAI con ID: {file_id}")
             
             # 2. Crear vector store
             vector_store = self.client.vector_stores.create(
                 name=f"business_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
             )
             vector_store_id = vector_store.id
-            logging.info(f"Vector store creado con ID: {vector_store_id}")
             
             # 3. Añadir archivo al vector store
             self.client.vector_stores.files.create(
