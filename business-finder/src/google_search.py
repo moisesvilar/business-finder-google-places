@@ -54,37 +54,53 @@ def _make_request_with_retry(url: str, max_retries: int = 5, initial_delay: floa
     logging.error(f"Error después de {max_retries} intentos: {last_error}")
     return None
 
-def search_linkedin_profile(company_name: str) -> Optional[str]:
+def search_linkedin_profile(url: str) -> Optional[str]:
     """
-    Busca el perfil de LinkedIn de una empresa usando Google Search.
+    Busca el perfil de LinkedIn de una empresa usando Google Custom Search API.
+    
+    Args:
+        url: URL de la página web de la empresa
+        
+    Returns:
+        URL del perfil de LinkedIn o None si no se encuentra
     """
     try:
-        # Construir la URL de búsqueda
-        search_query = f"{company_name} site:linkedin.com/company"
-        encoded_query = quote_plus(search_query)
-        url = f"https://www.google.com/search?q={encoded_query}&num=3&hl=en&start=0&safe=active"
+        # Configurar la API key y el Search Engine ID
+        api_key = os.getenv('GOOGLE_API_KEY')
+        search_engine_id = os.getenv('GOOGLE_SEARCH_ENGINE_ID')
         
-        # Realizar la petición con retry
-        response = _make_request_with_retry(url)
-        if not response:
+        if not api_key or not search_engine_id:
+            logging.error("Faltan credenciales de Google Custom Search API")
             return None
             
-        # Parsear la respuesta
-        soup = BeautifulSoup(response.text, 'html.parser')
+        # Construir la URL de la API
+        api_url = "https://www.googleapis.com/customsearch/v1"
+        params = {
+            'key': api_key,
+            'cx': search_engine_id,
+            'q': f"{url} site:linkedin.com",
+            'num': 3,  # Número de resultados
+            'safe': 'active'
+        }
         
-        # Buscar enlaces de LinkedIn
-        for link in soup.find_all('a'):
-            href = link.get('href', '')
-            if 'linkedin.com/company/' in href:
-                # Extraer la URL del perfil
-                match = re.search(r'https?://(?:www\.)?linkedin\.com/company/[^/]+', href)
-                if match:
-                    return match.group(0)
-                    
+        # Realizar la petición
+        response = requests.get(api_url, params=params)
+        response.raise_for_status()
+        
+        # Parsear la respuesta
+        data = response.json()
+        
+        # Buscar en los resultados
+        if 'items' in data:
+            for item in data['items']:
+                link = item.get('link', '')
+                if 'linkedin.com/company/' in link:
+                    return link
+        
         return None
         
     except Exception as e:
-        logging.error(f"Error buscando perfil de LinkedIn para {company_name}: {e}")
+        logging.error(f"Error buscando perfil de LinkedIn para {url}: {e}")
         return None
 
 def search_employee_count(company_name: str) -> Optional[Dict[str, Any]]:

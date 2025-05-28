@@ -125,7 +125,7 @@ class BusinessFinder:
             
             # Buscar URL de LinkedIn
             logging.info(f"Buscando URL de LinkedIn")
-            linkedin_url = search_linkedin_profile(company['name'])
+            linkedin_url = search_linkedin_profile(company['website'])
             if not linkedin_url:
                 logging.warning(f"No se pudo encontrar la URL de LinkedIn")
             else:
