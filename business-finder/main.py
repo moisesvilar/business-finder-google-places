@@ -122,18 +122,6 @@ class BusinessFinder:
                 colors = get_dominant_colors(screenshot_path)
                 hex_colors = ["#{:02x}{:02x}{:02x}".format(r, g, b) for r, g, b in colors]
                 company['colores_hex'] = hex_colors
-                
-                # Análisis de colores con OpenAI
-                analisis_colores = self.openai_client.analizar_colores(hex_colors)
-                company['analisis_colores'] = analisis_colores
-            
-            # Buscar información de empleados
-            logging.info(f"Buscando información de empleados")
-            employee_count = search_employee_count(company['name'])
-            if not employee_count:
-                logging.warning(f"No se pudo encontrar el número de empleados")
-            else:
-                company['employee_count'] = employee_count
             
             # Buscar URL de LinkedIn
             logging.info(f"Buscando URL de LinkedIn")
