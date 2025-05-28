@@ -127,8 +127,8 @@ class BusinessFinder:
                 company['linkedin_url'] = linkedin_url
             
             # Determinar industria basada en el resumen
-            if resumen:
-                industria = self.openai_client.determinar_industria(resumen)
+            if company.get('resumen'):
+                industria = self.openai_client.determinar_industria(company['resumen'])
                 if industria:
                     company['industry'] = industria
             
