@@ -126,36 +126,44 @@ class WebScraper:
         return dl_img(url, dest_folder)
 
     def capture_screenshot(self, url: str) -> Optional[str]:
-        """Captura una screenshot de la página web."""
+        """Captura una screenshot de la página web usando ScreenshotAPI."""
         try:
-            # Configurar Chrome en modo headless
-            chrome_options = Options()
-            chrome_options.add_argument('--headless')
-            chrome_options.add_argument('--no-sandbox')
-            chrome_options.add_argument('--disable-dev-shm-usage')
-            chrome_options.add_argument('--window-size=1920,1080')
-            
-            # Inicializar el driver
-            driver = webdriver.Chrome(options=chrome_options)
-            
-            # Cargar la página
-            driver.get(url)
-            
-            # Esperar a que la página cargue completamente
-            time.sleep(5)
-            
-            # Crear directorio si no existe
+            # Asegurar que el directorio existe
             os.makedirs("tmp/screenshots", exist_ok=True)
             
             # Generar nombre de archivo
             filename = url.replace('http://', '').replace('https://', '').replace('/', '_')
             screenshot_path = f"tmp/screenshots/{filename}.png"
             
-            # Capturar screenshot
-            driver.save_screenshot(screenshot_path)
-            driver.quit()
+            # Configurar la petición a ScreenshotAPI
+            api_url = "https://shot.screenshotapi.net/v3/screenshot"
+            params = {
+                'token': os.getenv('SCREENSHOT_API_TOKEN'),
+                'url': url,
+                'wait_for_event': 'load',
+                'output': 'image',
+                'file_type': 'png',
+                'fresh': True,
+                'block_ads': True,
+                'block_tracking': True,
+                'block_chat_widgets': True,
+                'timeout': 10000,  # 10 segundos
+                'width': 1920,
+                'height': 1080
+            }
+
+            # Realizar la petición
+            response = requests.get(api_url, params=params)
             
-            return screenshot_path
+            if response.status_code == 200:
+                # Guardar la imagen
+                with open(screenshot_path, 'wb') as f:
+                    f.write(response.content)
+                logging.info(f"Captura guardada en: {screenshot_path}")
+                return screenshot_path
+            else:
+                logging.error(f"Error en la API: {response.status_code} - {response.text}")
+                return None
             
         except Exception as e:
             logging.error(f"Error al capturar screenshot de {url}: {e}")
