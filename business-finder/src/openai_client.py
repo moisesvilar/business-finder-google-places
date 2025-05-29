@@ -123,8 +123,8 @@ class OpenAIClient:
             response = self.client.chat.completions.create(
                 model="gpt-4-turbo-preview",
                 messages=[
-                    {"role": "system", "content": "Eres un experto en clasificación de empresas. Tu tarea es determinar la industria principal de una empresa basándote en su descripción. Responde SOLO con el nombre de la industria, sin explicaciones adicionales."},
-                    {"role": "user", "content": f"Basándote en este resumen, ¿cuál es la industria principal de la empresa? Responde SOLO con el nombre de la industria:\n\n{resumen}"}
+                    {"role": "system", "content": "Eres un experto en clasificación de empresas. Tu tarea es determinar la industria principal de una empresa basándote en su descripción. Responde con el nombre del sector empresarial según los códigos CNAE.Responde SOLO con el nombre de la industria, sin explicaciones adicionales."},
+                    {"role": "user", "content": f"Basándote en este resumen, ¿cuál es la industria principal de la empresa?  Responde con el nombre del sector empresarial según los códigos CNAE. Responde SOLO con el nombre de la industria:\n\n{resumen}"}
                 ],
                 temperature=0.3,
                 max_tokens=50

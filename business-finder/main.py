@@ -43,6 +43,45 @@ class BusinessFinder:
         self.openai_client = OpenAIClient()
         self.csv_writer = CSVWriter()
         
+    def process_industry(self, file_path: str) -> None:
+        """
+        Determina la industria de una empresa a partir de su resumen.
+        
+        Args:
+            file_path: Ruta al archivo de texto con el resumen
+        """
+        try:
+            # Validar que el archivo existe
+            if not os.path.exists(file_path):
+                logging.error(f"No se encontró el archivo: {file_path}")
+                return
+                
+            # Leer el contenido del archivo
+            logging.info(f"Leyendo resumen desde {file_path}")
+            with open(file_path, 'r', encoding='utf-8') as f:
+                resumen = f.read().strip()
+                
+            if not resumen:
+                logging.error("El archivo está vacío")
+                return
+                
+            # Determinar la industria
+            logging.info("Determinando industria")
+            industria = self.openai_client.determinar_industria(resumen)
+            
+            if not industria:
+                logging.error("No se pudo determinar la industria")
+                return
+                
+            # Imprimir la industria
+            print("\nIndustria determinada:")
+            print("---------------------")
+            print(industria)
+            print("---------------------\n")
+            
+        except Exception as e:
+            logging.error(f"Error procesando industria desde {file_path}: {e}")
+
     def process_single_url(self, url: str) -> None:
         """
         Procesa una única URL para generar su resumen.
@@ -262,9 +301,10 @@ def main():
     # Grupo mutuamente excluyente para los argumentos
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument('--only-summary', type=str, help='URL de la empresa para generar solo el resumen.')
+    group.add_argument('--only-industry', type=str, help='Ruta al archivo de texto con el resumen para determinar la industria.')
     group.add_argument('--query', type=str, help='Término de búsqueda para empresas.')
     
-    # Argumentos adicionales (solo se usan si no se usa --only-summary)
+    # Argumentos adicionales (solo se usan si no se usa --only-summary o --only-industry)
     parser.add_argument('--location', type=str, default="Madrid", help='Ubicación para la búsqueda (ej: "Madrid, Spain").')
     parser.add_argument('--max-results', type=int, default=100, help='Número máximo de resultados a obtener.')
     parser.add_argument('--limit', type=int, help='Número máximo de empresas a procesar. Si no se especifica, se procesan todas.')
@@ -276,6 +316,8 @@ def main():
     
     if args.only_summary:
         finder.process_single_url(args.only_summary)
+    elif args.only_industry:
+        finder.process_industry(args.only_industry)
     else:
         finder.find_businesses(args.query, args.location, args.max_results, args.limit, args.radius)
 
