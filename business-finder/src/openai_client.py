@@ -117,19 +117,40 @@ class OpenAIClient:
             logging.error(f"Error al analizar colores con OpenAI: {e}")
             return ""
 
-    def determinar_industria(self, resumen: str) -> Optional[str]:
-        """Determina la industria principal basada en el resumen."""
+    def determinar_industria(self, resumen: str, existing_industries: Optional[List[str]] = None) -> Optional[str]:
+        """
+        Determina la industria principal basada en el resumen.
+        
+        Args:
+            resumen: Resumen de la empresa
+            existing_industries: Lista opcional de industrias existentes en Notion
+            
+        Returns:
+            Optional[str]: Nombre de la industria o None si no se pudo determinar
+        """
         try:
+            # Construir el prompt del sistema
+            system_prompt = "Eres un experto en clasificación de empresas. Tu tarea es determinar la industria principal de una empresa basándote en su descripción."
+            
+            if existing_industries:
+                system_prompt += f"\n\nPrimero determina si UNA y SOLO UNA de estas industrias existentes se ajusta a esta empresa:\n{', '.join(existing_industries)}\n\n. Si no encuentras ninguna que se ajuste, entonces escoge otro sector empresarial de entre los códigos CNAE.Responde SOLO con el nombre exacto de la industria elegida, sin explicaciones adicionales."
+            else:
+                system_prompt += "\n\nResponde con el nombre del sector empresarial según los códigos CNAE. Responde SOLO con el nombre de la industria, sin explicaciones adicionales."
+            
             response = self.client.chat.completions.create(
                 model="gpt-4-turbo-preview",
                 messages=[
-                    {"role": "system", "content": "Eres un experto en clasificación de empresas. Tu tarea es determinar la industria principal de una empresa basándote en su descripción. Responde con el nombre del sector empresarial según los códigos CNAE.Responde SOLO con el nombre de la industria, sin explicaciones adicionales."},
-                    {"role": "user", "content": f"Basándote en este resumen, ¿cuál es la industria principal de la empresa?  Responde con el nombre del sector empresarial según los códigos CNAE. Responde SOLO con el nombre de la industria:\n\n{resumen}"}
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": f"Basándote en este resumen, ¿cuál es la industria principal de la empresa?\n\n{resumen}"}
                 ],
                 temperature=0.3,
                 max_tokens=50
             )
-            return response.choices[0].message.content.strip()
+            
+            industria = response.choices[0].message.content.strip()
+                
+            return industria
+            
         except Exception as e:
             logging.error(f"Error al determinar industria con OpenAI: {e}")
             return None 

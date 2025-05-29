@@ -3,6 +3,7 @@ from notion_client import Client
 from dotenv import load_dotenv
 from google_search import search_linkedin_profile
 import logging
+from typing import List
 
 # Cargar variables de entorno
 load_dotenv()
@@ -59,6 +60,45 @@ def insert_company_to_notion(company_data):
     except Exception as e:
         logging.error(f"Error al insertar en Notion: {e}")
         return None
+
+def get_existing_industries() -> List[str]:
+    """
+    Obtiene la lista de industrias únicas almacenadas en la base de datos de Notion.
+    
+    Returns:
+        List[str]: Lista de industrias sin duplicados
+    """
+    try:
+        logging.info("Obteniendo industrias existentes de Notion")
+        database_id = os.getenv('NOTION_DATABASE_ID')
+        
+        # Consultar la base de datos
+        response = notion.databases.query(
+            database_id=database_id,
+            filter={
+                "property": "Primary industry",
+                "select": {
+                    "is_not_empty": True
+                }
+            }
+        )
+        
+        # Extraer industrias únicas
+        industries = set()
+        for page in response.get('results', []):
+            industry = page.get('properties', {}).get('Primary industry', {}).get('select', {}).get('name')
+            if industry:
+                industries.add(industry)
+        
+        # Convertir a lista y ordenar
+        industries_list = sorted(list(industries))
+        logging.info(f"Se encontraron {len(industries_list)} industrias únicas")
+        
+        return industries_list
+        
+    except Exception as e:
+        logging.error(f"Error al obtener industrias de Notion: {e}")
+        return []
 
 # Ejemplo de uso
 # company_data = {

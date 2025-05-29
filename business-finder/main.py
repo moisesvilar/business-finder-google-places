@@ -16,7 +16,7 @@ from s3_client import S3Client
 from openai_client import OpenAIClient
 from csv_writer import CSVWriter
 from color_analysis import get_dominant_colors
-from notion_integration import insert_company_to_notion
+from notion_integration import insert_company_to_notion, get_existing_industries
 from google_search import search_linkedin_profile, search_employee_count
 
 # Configurar logging
@@ -65,9 +65,16 @@ class BusinessFinder:
                 logging.error("El archivo está vacío")
                 return
                 
+            # Obtener industrias existentes
+            existing_industries = get_existing_industries()
+            if existing_industries:
+                logging.info(f"Se encontraron {len(existing_industries)} industrias existentes")
+            else:
+                logging.warning("No se encontraron industrias existentes")
+                
             # Determinar la industria
             logging.info("Determinando industria")
-            industria = self.openai_client.determinar_industria(resumen)
+            industria = self.openai_client.determinar_industria(resumen, existing_industries)
             
             if not industria:
                 logging.error("No se pudo determinar la industria")
