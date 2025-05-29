@@ -1,0 +1,29 @@
+{
+  "url": null,
+  "markdown": "# Here's a preview of your destination\n\n[Continue to destination![Continue Icon](https://d1ayxb9ooonjts.cloudfront.net/d/8955792E2AE2972C05969B26C881AD988C9BB5BD.svg)](https://blog.aerzen.es/#utm_source=gmb&utm_medium=maps&utm_campaign=gmb_maps)\n\nYou'll be redirected in 8 seconds...\n\n[Continue to destination![Continue Icon](https://d1ayxb9ooonjts.cloudfront.net/d/8955792E2AE2972C05969B26C881AD988C9BB5BD.svg)](https://blog.aerzen.es/#utm_source=gmb&utm_medium=maps&utm_campaign=gmb_maps)\n\nYou'll be redirected in 8 seconds...\n\n[iframe](https://ep2.adtrafficquality.google/sodar/sodar2/237/runner.html)[iframe](https://www.google.com/recaptcha/api2/aframe)[iframe](https://securepubads.g.doubleclick.net/static/topics/topics_frame.html)",
+  "html": "<!DOCTYPE html><html lang=\"en\">\n  <body class=\"pre_9_3\">\n    \n    \n    \n    <main id=\"main\">\n      \n      \n      \n      <div class=\"grid-item\">\n        <section class=\"preview\">\n          <h1 class=\"preview__card-header\">\n            Here's a preview of your destination\n          </h1>\n          \n\n          <a href=\"https://blog.aerzen.es/#utm_source=gmb&amp;utm_medium=maps&amp;utm_campaign=gmb_maps\" class=\"preview__continue\" id=\"action:continue\">\n            <span>Continue to destination</span>\n            <img src=\"https://d1ayxb9ooonjts.cloudfront.net/d/8955792E2AE2972C05969B26C881AD988C9BB5BD.svg\" class=\"preview__continue-icon\" alt=\"Continue Icon\">\n          </a>\n          <p class=\"preview__countdown countdown-timer\">\n            You'll be redirected in <span id=\"countdown\">8</span> seconds...</p>\n        </section>\n      </div>\n    </main>\n    <section class=\"continue\">\n      <a href=\"https://blog.aerzen.es/#utm_source=gmb&amp;utm_medium=maps&amp;utm_campaign=gmb_maps\" id=\"action:continue_sm\">\n        <span>Continue to destination</span>\n        <img src=\"https://d1ayxb9ooonjts.cloudfront.net/d/8955792E2AE2972C05969B26C881AD988C9BB5BD.svg\" class=\"preview__continue-icon\" alt=\"Continue Icon\">\n      </a>\n      <p class=\"preview__countdown countdown-timer\">\n        You'll be redirected in <span id=\"countdown\">8</span> seconds...</p>\n    </section>\n    \n\n  \n\n<iframe src=\"https://ep2.adtrafficquality.google/sodar/sodar2/237/runner.html\" width=\"0\" height=\"0\" style=\"display: none;\"></iframe><iframe src=\"https://www.google.com/recaptcha/api2/aframe\" width=\"0\" height=\"0\" style=\"display: none;\"></iframe><iframe name=\"goog_topics_frame\" src=\"https://securepubads.g.doubleclick.net/static/topics/topics_frame.html\" style=\"display: none;\" v2rxsaxmm=\"\"></iframe></body></html>",
+  "rawHtml": null,
+  "links": null,
+  "extract": null,
+  "screenshot": null,
+  "metadata": {
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "noindex",
+    "language": "en",
+    "title": "Bitly | bit.ly/4a9X8s0",
+    "referrer": "always",
+    "favicon": "https://d1ayxb9ooonjts.cloudfront.net/d/911DC5232AD960E5CD922312AAAA1768D921C30F.png",
+    "scrapeId": "caac0130-d073-4003-b4a8-eca16aecd3a2",
+    "sourceURL": "https://bit.ly/4a9X8s0",
+    "url": "https://bit.ly/4a9X8s0",
+    "statusCode": 200,
+    "proxyUsed": "basic"
+  },
+  "actions": null,
+  "title": null,
+  "description": null,
+  "changeTracking": null,
+  "success": true,
+  "warning": null,
+  "error": null
+}

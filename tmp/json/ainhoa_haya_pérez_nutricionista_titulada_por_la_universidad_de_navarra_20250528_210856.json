@@ -1,0 +1,23 @@
+{
+  "url": null,
+  "markdown": "**Warning**: \"continue\" targeting switch is equivalent to \"break\". Did you mean to use \"continue 2\"? in **/home/clinicahaya/public\\_html/wp-content/plugins/rev-slider/includes/operations.class.php** on line **2715**\n\n**Warning**: \"continue\" targeting switch is equivalent to \"break\". Did you mean to use \"continue 2\"? in **/home/clinicahaya/public\\_html/wp-content/plugins/rev-slider/includes/operations.class.php** on line **2719**\n\n**Warning**: \"continue\" targeting switch is equivalent to \"break\". Did you mean to use \"continue 2\"? in **/home/clinicahaya/public\\_html/wp-content/plugins/rev-slider/includes/output.class.php** on line **3615**\n\n**Warning**: session\\_start(): Cannot start session when headers already sent in **/home/clinicahaya/public\\_html/wp-content/plugins/tm-photo-gallery/classes/class-core.php** on line **264**\n\n**Warning**: session\\_start(): Cannot start session when headers already sent in **/home/clinicahaya/public\\_html/wp-content/plugins/cherry-services-list/public/includes/class-cherry-services-list-form.php** on line **44**\n\n**Warning**: Cannot modify header information - headers already sent by (output started at /home/clinicahaya/public\\_html/wp-content/plugins/rev-slider/includes/operations.class.php:2715) in **/home/clinicahaya/public\\_html/wp-content/plugins/cherry-trending-posts/inc/class-trending-posts-callback-views.php** on line **133**\n\n**Warning**: Cannot modify header information - headers already sent by (output started at /home/clinicahaya/public\\_html/wp-content/plugins/rev-slider/includes/operations.class.php:2715) in **/home/clinicahaya/public\\_html/wp-includes/pluggable.php** on line **1435**\n\n**Warning**: Cannot modify header information - headers already sent by (output started at /home/clinicahaya/public\\_html/wp-content/plugins/rev-slider/includes/operations.class.php:2715) in **/home/clinicahaya/public\\_html/wp-includes/pluggable.php** on line **1438**",
+  "html": "<html><body><br>\n<b>Warning</b>:  \"continue\" targeting switch is equivalent to \"break\". Did you mean to use \"continue 2\"? in <b>/home/clinicahaya/public_html/wp-content/plugins/rev-slider/includes/operations.class.php</b> on line <b>2715</b><br>\n<br>\n<b>Warning</b>:  \"continue\" targeting switch is equivalent to \"break\". Did you mean to use \"continue 2\"? in <b>/home/clinicahaya/public_html/wp-content/plugins/rev-slider/includes/operations.class.php</b> on line <b>2719</b><br>\n<br>\n<b>Warning</b>:  \"continue\" targeting switch is equivalent to \"break\". Did you mean to use \"continue 2\"? in <b>/home/clinicahaya/public_html/wp-content/plugins/rev-slider/includes/output.class.php</b> on line <b>3615</b><br>\n<br>\n<b>Warning</b>:  session_start(): Cannot start session when headers already sent in <b>/home/clinicahaya/public_html/wp-content/plugins/tm-photo-gallery/classes/class-core.php</b> on line <b>264</b><br>\n<br>\n<b>Warning</b>:  session_start(): Cannot start session when headers already sent in <b>/home/clinicahaya/public_html/wp-content/plugins/cherry-services-list/public/includes/class-cherry-services-list-form.php</b> on line <b>44</b><br>\n<br>\n<b>Warning</b>:  Cannot modify header information - headers already sent by (output started at /home/clinicahaya/public_html/wp-content/plugins/rev-slider/includes/operations.class.php:2715) in <b>/home/clinicahaya/public_html/wp-content/plugins/cherry-trending-posts/inc/class-trending-posts-callback-views.php</b> on line <b>133</b><br>\n<br>\n<b>Warning</b>:  Cannot modify header information - headers already sent by (output started at /home/clinicahaya/public_html/wp-content/plugins/rev-slider/includes/operations.class.php:2715) in <b>/home/clinicahaya/public_html/wp-includes/pluggable.php</b> on line <b>1435</b><br>\n<br>\n<b>Warning</b>:  Cannot modify header information - headers already sent by (output started at /home/clinicahaya/public_html/wp-content/plugins/rev-slider/includes/operations.class.php:2715) in <b>/home/clinicahaya/public_html/wp-includes/pluggable.php</b> on line <b>1438</b><br>\n</body></html>",
+  "rawHtml": null,
+  "links": null,
+  "extract": null,
+  "screenshot": null,
+  "metadata": {
+    "scrapeId": "f8d8d403-6a47-42c4-bfc5-a9a60faf32ef",
+    "sourceURL": "http://www.clinicahaya.es/",
+    "url": "https://www.clinicahaya.es/",
+    "statusCode": 200,
+    "proxyUsed": "basic"
+  },
+  "actions": null,
+  "title": null,
+  "description": null,
+  "changeTracking": null,
+  "success": true,
+  "warning": null,
+  "error": null
+}

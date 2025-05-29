@@ -43,6 +43,76 @@ class BusinessFinder:
         self.openai_client = OpenAIClient()
         self.csv_writer = CSVWriter()
         
+    def process_single_url(self, url: str) -> None:
+        """
+        Procesa una única URL para generar su resumen.
+        
+        Args:
+            url: URL de la empresa a procesar
+        """
+        try:
+            # Validar URL
+            if not url.startswith(('http://', 'https://')):
+                url = 'https://' + url
+                
+            # Asegurar que los directorios existen
+            os.makedirs("tmp/json", exist_ok=True)
+            os.makedirs("tmp/summaries", exist_ok=True)
+            
+            # Generar nombre de archivo basado en la URL
+            filename = url.replace('http://', '').replace('https://', '').replace('/', '_')
+            json_path = os.path.join("tmp", "json", f"{filename}.json")
+            
+            # Scrapear la URL
+            logging.info(f"Scrapeando {url}")
+            firecrawl_response = self.web_scraper.scrape_url(url)
+            
+            if not firecrawl_response:
+                logging.error(f"No se pudo scrapear {url}")
+                return
+                
+            # Guardar JSON
+            logging.info(f"Guardando resultado del scraping en JSON")
+            with open(json_path, 'w', encoding='utf-8') as f:
+                json.dump(firecrawl_response, f, ensure_ascii=False, indent=2)
+                
+            # Generar y guardar resumen
+            self.save_summary(url, json_path)
+            
+        except Exception as e:
+            logging.error(f"Error procesando URL {url}: {e}")
+
+    def save_summary(self, url: str, json_path: str) -> None:
+        """
+        Genera y guarda el resumen de una empresa.
+        
+        Args:
+            url: URL de la empresa
+            json_path: Ruta al archivo JSON con el contenido scrapeado
+        """
+        try:
+            # Generar nombre de archivo basado en la URL
+            filename = url.replace('http://', '').replace('https://', '').replace('/', '_')
+            summary_path = os.path.join("tmp", "summaries", f"{filename}.txt")
+            
+            # Generar resumen
+            logging.info(f"Generando resumen")
+            resumen = self.openai_client.resumir_texto(json_path)
+            
+            if not resumen:
+                logging.error("No se pudo generar el resumen")
+                return
+                
+            # Guardar resumen
+            logging.info(f"Guardando resumen en {summary_path}")
+            with open(summary_path, 'w', encoding='utf-8') as f:
+                f.write(resumen)
+                
+            logging.info(f"Resumen guardado exitosamente")
+            
+        except Exception as e:
+            logging.error(f"Error guardando resumen para {url}: {e}")
+
     def process_company(self, company: Dict[str, Any]) -> Dict[str, Any]:
         """
         Procesa una empresa: scraping, análisis y guardado.
@@ -188,15 +258,26 @@ class BusinessFinder:
 
 def main():
     parser = argparse.ArgumentParser(description='Buscador de empresas usando Google Places API.')
-    parser.add_argument('--query', type=str, default="empresas de tecnología", help='Término de búsqueda para empresas.')
+    
+    # Grupo mutuamente excluyente para los argumentos
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument('--only-summary', type=str, help='URL de la empresa para generar solo el resumen.')
+    group.add_argument('--query', type=str, help='Término de búsqueda para empresas.')
+    
+    # Argumentos adicionales (solo se usan si no se usa --only-summary)
     parser.add_argument('--location', type=str, default="Madrid", help='Ubicación para la búsqueda (ej: "Madrid, Spain").')
     parser.add_argument('--max-results', type=int, default=100, help='Número máximo de resultados a obtener.')
     parser.add_argument('--limit', type=int, help='Número máximo de empresas a procesar. Si no se especifica, se procesan todas.')
     parser.add_argument('--radius', type=int, default=5000, help='Radio de búsqueda en metros desde la ubicación especificada.')
+    
     args = parser.parse_args()
 
     finder = BusinessFinder()
-    finder.find_businesses(args.query, args.location, args.max_results, args.limit, args.radius)
+    
+    if args.only_summary:
+        finder.process_single_url(args.only_summary)
+    else:
+        finder.find_businesses(args.query, args.location, args.max_results, args.limit, args.radius)
 
 if __name__ == "__main__":
     main() 
