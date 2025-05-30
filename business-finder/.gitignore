@@ -38,3 +38,21 @@ tmp/
 *.log
 *.tmp
 output/
+
+# Archivos temporales
+tmp/
+*.json
+
+# Logs
+*.log
+
+# Entorno virtual
+venv/
+
+# Archivos de entorno
+.env
+
+# Archivos del sistema
+.DS_Store
+__pycache__/
+*.pyc
