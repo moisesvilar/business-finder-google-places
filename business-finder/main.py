@@ -16,7 +16,7 @@ from s3_client import S3Client
 from openai_client import OpenAIClient
 from csv_writer import CSVWriter
 from color_analysis import get_dominant_colors
-from notion_integration import insert_company_to_notion, get_existing_industries
+from notion_integration import insert_company_to_notion, get_existing_industries, get_existing_websites
 from google_search import search_linkedin_profile, search_employee_count
 
 # Configurar logging
@@ -274,6 +274,10 @@ class BusinessFinder:
             radius: Radio de búsqueda en metros desde la ubicación especificada
         """
         try:
+            # Obtener websites existentes en Notion
+            existing_websites = get_existing_websites()
+            logging.info(f"Se encontraron {len(existing_websites)} websites existentes en Notion")
+            
             # Buscar empresas
             logging.info(f"Buscando empresas: {query} en {location or 'todo el mundo'} (radio: {radius}m)")
             businesses = self.google_client.search_business(query, location, max_results, radius)
@@ -293,14 +297,24 @@ class BusinessFinder:
                 # Añadir la query de búsqueda a los datos de la empresa
                 business['query'] = query
                 logging.info(f"Procesando empresa: {business['name']}")
-                processed = self.process_company(business)
-                # Validar que tenga website y description antes de insertar
-                if not processed.get('website'):
-                    logging.warning(f"Empresa {processed['name']} sin website - No se insertará en Notion\n\n")
+                
+                # Validar que tenga website antes de procesar
+                if not business.get('website'):
+                    logging.warning(f"Empresa {business['name']} sin website - No se insertará en Notion\n\n")
                     continue
+                    
+                # Validar que no exista ya en Notion
+                if business['website'] in existing_websites:
+                    logging.warning(f"Empresa {business['name']} ya existe en Notion (website: {business['website']})\n\n")
+                    continue
+                
+                processed = self.process_company(business)
+                
+                # Validar que tenga resumen antes de insertar
                 if not processed.get('resumen'):
                     logging.warning(f"Empresa {processed['name']} sin descripción - No se insertará en Notion\n\n")
                     continue
+                    
                 insert_company_to_notion(processed)
                 logging.info(f"Empresa {processed['name']} procesada\n\n")
                 # Pausa de 2 segundos entre cada empresa para evitar rate limits

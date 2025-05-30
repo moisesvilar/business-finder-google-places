@@ -99,6 +99,45 @@ def get_existing_industries() -> List[str]:
         logging.error(f"Error al obtener industrias de Notion: {e}")
         return []
 
+def get_existing_websites() -> List[str]:
+    """
+    Obtiene la lista de websites únicos almacenados en la base de datos de Notion.
+    
+    Returns:
+        List[str]: Lista de websites sin duplicados
+    """
+    try:
+        logging.info("Obteniendo websites existentes de Notion")
+        database_id = os.getenv('NOTION_DATABASE_ID')
+        
+        # Consultar la base de datos
+        response = notion.databases.query(
+            database_id=database_id,
+            filter={
+                "property": "Website",
+                "url": {
+                    "is_not_empty": True
+                }
+            }
+        )
+        
+        # Extraer websites únicos
+        websites = set()
+        for page in response.get('results', []):
+            website = page.get('properties', {}).get('Website', {}).get('url')
+            if website:
+                websites.add(website)
+        
+        # Convertir a lista y ordenar
+        websites_list = sorted(list(websites))
+        logging.info(f"Se encontraron {len(websites_list)} websites únicos")
+        
+        return websites_list
+        
+    except Exception as e:
+        logging.error(f"Error al obtener websites de Notion: {e}")
+        return []
+
 # Ejemplo de uso
 # company_data = {
 #     'name': 'Docuten Tech',
