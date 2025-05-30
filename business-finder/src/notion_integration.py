@@ -26,7 +26,6 @@ def insert_company_to_notion(company_data):
             'Description': {'rich_text': [{'text': {'content': company_data.get('resumen', '') or ''}}]},
             'Logo': {'url': company_data.get('url_logo', '') or None},
             'Location': {'rich_text': [{'text': {'content': company_data.get('address', '') or ''}}]},
-            'Size': {'number': company_data.get('employee_count', {}).get('count')},
             'Brand colors': {'multi_select': [{'name': color} for color in company_data.get('colores_hex', [])]},
             'LinkedIn': {'url': company_data.get('linkedin_url', '') or None},
             'Scraped website': {'url': company_data.get('markdown_url', '') or None},
