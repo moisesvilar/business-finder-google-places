@@ -296,10 +296,10 @@ class BusinessFinder:
                 processed = self.process_company(business)
                 # Validar que tenga website y description antes de insertar
                 if not processed.get('website'):
-                    logging.warning(f"Empresa {processed['name']} sin website - No se insertará en Notion")
+                    logging.warning(f"Empresa {processed['name']} sin website - No se insertará en Notion\n\n")
                     continue
                 if not processed.get('resumen'):
-                    logging.warning(f"Empresa {processed['name']} sin descripción - No se insertará en Notion")
+                    logging.warning(f"Empresa {processed['name']} sin descripción - No se insertará en Notion\n\n")
                     continue
                 insert_company_to_notion(processed)
                 logging.info(f"Empresa {processed['name']} procesada\n\n")
