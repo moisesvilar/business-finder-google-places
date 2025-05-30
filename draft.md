@@ -1,27 +1,32 @@
-1. **Modificar el parser de argumentos en `main.py`**:
-   - Añadir nuevo argumento `--only-summary` que acepte una URL
-   - Hacer que este argumento sea mutuamente excluyente con los otros argumentos
-   - Usar `argparse.add_mutually_exclusive_group()` para esto
+Te propongo el siguiente plan:
 
-2. **Crear nueva función `process_single_url` en `BusinessFinder`**:
-   - Recibe la URL como parámetro
-   - Usa `web_scraper.scrape_url()` para obtener el contenido
-   - Genera nombre de archivo JSON basado en la URL (similar a como se hace en `process_company`)
-   - Guarda el JSON en `tmp/json/`
+1. **En `notion_integration.py`**:
+   - Crear nueva función `get_existing_industries()` que:
+     - Use el cliente de Notion para consultar la base de datos
+     - Filtre por la propiedad 'Primary industry'
+     - Extraiga los valores únicos de esta propiedad
+     - Devuelva una lista de strings con las industrias sin duplicados
+     - Maneje errores y logging apropiadamente
 
-3. **Crear nueva función `save_summary` en `BusinessFinder`**:
-   - Recibe la URL y la ruta del archivo JSON como parámetros
-   - Usa `openai_client.resumir_texto()` para obtener el resumen
-   - Genera nombre de archivo .txt de salida basado en la URL
-   - Guarda el resumen en ese archivo de salida .txt
+2. **En `openai_client.py`**:
+   - Modificar la función `determinar_industria` para que:
+     - Acepte un nuevo parámetro opcional `existing_industries: List[str]`
+     - Si se proporciona la lista, la incluya en el prompt del sistema
+     - Modifique el prompt para indicar que debe elegir entre las industrias existentes
+     - Si no se proporciona la lista, mantenga el comportamiento actual
 
-4. **Modificar `main()`**:
-   - Añadir lógica para detectar si se usa `--only-summary`
-   - Si se usa, llamar a `process_single_url` y `save_summary`
-   - Si no, mantener la lógica actual
+3. **En `main.py`**:
+   - Modificar la función `process_industry` para que:
+     - Obtenga la lista de industrias existentes usando `get_existing_industries()`
+     - Pase esta lista a `determinar_industria`
 
-5. **Manejo de errores**:
-   - Validar que la URL es válida
-   - Manejar errores de scraping
-   - Manejar errores de generación de resumen
-   - Asegurar que los directorios necesarios existen
+4. **Manejo de errores**:
+   - En `get_existing_industries()`:
+     - Manejar errores de conexión con Notion
+     - Manejar errores de parsing de la respuesta
+     - Devolver lista vacía en caso de error
+   - En `determinar_industria`:
+     - Manejar el caso de lista vacía
+     - Mantener el comportamiento actual si la lista es None
+
+¿Quieres que proceda con la implementación?

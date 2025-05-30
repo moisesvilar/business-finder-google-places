@@ -133,9 +133,9 @@ class OpenAIClient:
             system_prompt = "Eres un experto en clasificación de empresas. Tu tarea es determinar la industria principal de una empresa basándote en su descripción."
             
             if existing_industries:
-                system_prompt += f"\n\nPrimero determina si UNA y SOLO UNA de estas industrias existentes se ajusta a esta empresa:\n{', '.join(existing_industries)}\n\n. Si no encuentras ninguna que se ajuste, entonces escoge otro sector empresarial de entre los códigos CNAE.Responde SOLO con el nombre exacto de la industria elegida, sin explicaciones adicionales."
+                system_prompt += f"\n\nPrimero determina si UNA y SOLO UNA de estas industrias existentes se ajusta a esta empresa:\n{', '.join(existing_industries)}\n\n. Si no encuentras ninguna que se ajuste, entonces escoge otro sector empresarial de entre los códigos CNAE. Responde con el nombre del sector empresarial según los códigos CNAE. Usa el siguiente formato: 'NNNN - [NOMBRE DEL SECTOR]'. Por ejemplo, '1107 – Fabricación de bebidas no alcohólicas; producción de aguas minerales y otras aguas embotelladas'. Responde SOLO con el nombre exacto de la industria elegida, sin explicaciones adicionales."
             else:
-                system_prompt += "\n\nResponde con el nombre del sector empresarial según los códigos CNAE. Responde SOLO con el nombre de la industria, sin explicaciones adicionales."
+                system_prompt += "\n\nResponde con el nombre del sector empresarial según los códigos CNAE. Usa el siguiente formato: 'NNNN - [NOMBRE DEL SECTOR]'. Por ejemplo, '1107 – Fabricación de bebidas no alcohólicas; producción de aguas minerales y otras aguas embotelladas'. Responde SOLO con el nombre de la industria, sin explicaciones adicionales."
             
             response = self.client.chat.completions.create(
                 model="gpt-4-turbo-preview",
