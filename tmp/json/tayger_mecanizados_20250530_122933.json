@@ -1,0 +1,42 @@
+{
+  "url": null,
+  "markdown": "",
+  "html": "<!DOCTYPE html><!--[if lt IE 7]>\n\t<html class=\"no-js ie6 oldie\" lang=\"en\">\n<![endif]--><!--[if IE 7]>\n\t<html class=\"no-js ie7 oldie\" lang=\"en\">\n<![endif]--><!--[if IE 8]>\n\t<html class=\"no-js ie8 oldie\" lang=\"en\">\n<![endif]--><!--[if gt IE 8]><!--><html class=\"no-touch svg\" lang=\"es-ES\" data-scroll-dir-x=\"0\" data-scroll-dir-y=\"0\"><!--<![endif]-->\n<body class=\"\" id=\"migrated-site\">\n\t\n\n\n\n<div class=\"main wrapper clearfix\">\n    <section id=\"page-zones__main\" class=\"bk-zone column \" data-uniqueid=\"SWlQQZF0KH6LzAJ\" data-parentuniqueid=\"\">            \n\n                    \n\n                \n\n                \n\n    </section>\n\n</div>  \n\n\n\n\n\t\n\n\t    \n<div id=\"js-cookie-consent-event\" style=\"display: none;\"></div>\n\n\n\n\n\n\n\n\n\n\n    \n\n    \n    \n    \n\n\n\n\n    \n\n\n    \n    \n\n    \n\n    \n\n\n\n    \n    \n\n\n\t\n\n\n\n\n</body></html>",
+  "rawHtml": null,
+  "links": null,
+  "extract": null,
+  "screenshot": null,
+  "metadata": {
+    "favicon": "https://basekit-packages.s3.amazonaws.com/Telefonica.ico",
+    "og:description": "Mecanizados, reparación de maquinaria industrial, calderería, soldadura",
+    "generator": "BaseKit",
+    "title": "Home Page",
+    "ogDescription": "Mecanizados, reparación de maquinaria industrial, calderería, soldadura",
+    "keywords": "mecanizados, reparación maquinaria industrial, calderería, soldadura",
+    "language": "es-ES",
+    "og:url": "https://taygermecanizados.com/",
+    "og:site_name": "Talleres Tayger S.L.",
+    "ogUrl": "https://taygermecanizados.com/",
+    "viewport": [
+      "width=device-width,initial-scale=1",
+      "width=device-width, initial-scale=1, viewport-fit=cover"
+    ],
+    "description": "Mecanizados, reparación de maquinaria industrial, calderería, soldadura",
+    "og:title": "Inicio",
+    "ogTitle": "Inicio",
+    "ogSiteName": "Talleres Tayger S.L.",
+    "scrapeId": "b8b5beee-7f7b-401d-af57-67f4172ac1aa",
+    "sourceURL": "http://www.taygermecanizados.com/",
+    "url": "https://taygermecanizados.com/",
+    "statusCode": 200,
+    "contentType": "text/html; charset=UTF-8",
+    "proxyUsed": "basic"
+  },
+  "actions": null,
+  "title": null,
+  "description": null,
+  "changeTracking": null,
+  "success": true,
+  "warning": null,
+  "error": null
+}

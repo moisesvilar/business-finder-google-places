@@ -1,0 +1,31 @@
+{
+  "url": null,
+  "markdown": "[Saltar al contenido](https://metalok.es/#theme-main)\n\n# Mecanizados\n\n![Portada](https://metalok.es/images/PortadaMecanizados.jpg)\n\n###### Dinamismo y flexibilidad\n\nPara adaptarnos a unas necesidades del mercado cada vez más exigentes en calidad, servicio y precio.\n\n###### Acompañamiento y asesoramiento\n\nEn las diferentes fases del proceso ofreciendo las soluciones más adecuadas y eficientes.\n\n###### Profesionalidad y formación continua\n\nPara transformarnos y evolucionar con los tiempos profesionalmente para dar mejores soluciones.\n\n###### Compromiso y responsabilidad\n\nPara responder con la máxima garantía a los retos del cliente, ofreciendo un servicio de calidad.\n\n### Empresa\n\n![](https://metalok.es/images/001.jpg)\n\n![](https://metalok.es/images/002.jpg)\n\n![](https://metalok.es/images/003.jpg)\n\nSomos una empresa de nueva creación con más de 15 años de experiencia de sus socios en el sector. Nuestra vocación de servicio y el trabajo conjunto con nuestros clientes serán la base para conseguir los objetivos marcados en el inicio de nuestros proyectos.",
+  "html": "<!DOCTYPE html><html lang=\"es-ES\"><body class=\"home page-template-default page page-id-121 wp-custom-logo wp-embed-responsive picostrap_header_navbar_position_ picostrap_header_navbar_color_choice_bg-transparent\"><div id=\"wrapper-navbar\" itemscope=\"\" itemtype=\"http://schema.org/WebSite\"> <a class=\"skip-link visually-hidden-focusable\" href=\"https://metalok.es/#theme-main\"> Saltar al contenido </a></div><main id=\"theme-main\"><div class=\"py-5 py-xl-6 bg-light-subtle text-dark-emphasis\"><div class=\"container text-center\"><h1 class=\"display-4\">Mecanizados</h1></div></div><div id=\"container-content-page\" class=\"container\"><div class=\"row\"><div class=\"col-md-10 offset-md-1 py-5\"><div class=\"container\"><div class=\"row\" style=\"height:2vh\"></div><div class=\"row\"> <img decoding=\"async\" class=\"img-fluid\" style=\"height: 100%; width: 100%; display: block;\" src=\"https://metalok.es/images/PortadaMecanizados.jpg\" alt=\"Portada\"></div></div><div class=\"container\"><div class=\"row caracteristicas\" style=\"font-size: 0.9rem\"><div class=\"col-md-3\" style=\"border-left: 1px solid #f28648\"><h6 class=\"text-center\">Dinamismo y flexibilidad</h6><p class=\"text-center\"> Para adaptarnos a unas necesidades del mercado cada vez más exigentes en calidad, servicio y precio.</p></div><div class=\"col-md-3\"><h6 class=\"text-center\">Acompañamiento y asesoramiento</h6><p class=\"text-center\"> En las diferentes fases del proceso ofreciendo las soluciones más adecuadas y eficientes.</p></div><div class=\"col-md-3\"><h6 class=\"text-center\">Profesionalidad y formación continua</h6><p class=\"text-center\"> Para transformarnos y evolucionar con los tiempos profesionalmente para dar mejores soluciones.</p></div><div class=\"col-md-3\" style=\"border-right: 1px solid #f28648\"><h6 class=\"text-center\">Compromiso y responsabilidad</h6><p class=\"text-center\">Para responder con la máxima garantía a los retos del cliente, ofreciendo un servicio de calidad.</p></div></div></div><div class=\"container\" id=\"empresa\"><div class=\"row\"><h3>Empresa</h3></div><div class=\"row\"><div class=\"col-md-7\" style=\"border-color:#eaeaea; border-radius: 5px\"><div class=\"row justify-content-center\"><div class=\"card\" style=\"border-radius: 5px;\"> <img decoding=\"async\" class=\"card-img-top img-fluid\" style=\"object-fit:cover; border-radius: 5px;\" src=\"https://metalok.es/images/001.jpg\"></div></div></div><div class=\"col-md-5 h-100\"><div class=\"row justify-content-center\"><div class=\"card\" style=\"border-radius: 5px;\"> <img decoding=\"async\" class=\"card-img-top img-fluid\" style=\"object-fit:cover; border-radius: 5px;\" src=\"https://metalok.es/images/002.jpg\"></div></div><div class=\"row\" style=\"height:11px\"></div><div class=\"row justify-content-center\"><div class=\"card\" style=\"border-radius: 5px;\"> <img decoding=\"async\" class=\"card-img-top img-fluid\" style=\"object-fit:cover; border-radius: 5px;\" src=\"https://metalok.es/images/003.jpg\"></div></div><div class=\"row\" style=\"height:10px\"></div></div></div><div class=\"row\"><div class=\"col-md-12\"><p class=\"text-left\">Somos una empresa de nueva creación con más de 15 años de experiencia de sus socios en el sector. Nuestra vocación de servicio y el trabajo conjunto con nuestros clientes serán la base para conseguir los objetivos marcados en el inicio de nuestros proyectos.</p></div></div></div></div></div></div></main><div class=\"wrapper py-3\" id=\"wrapper-footer-colophon\"><div class=\"container-fluid\"><div class=\"row\"><div class=\"col text-center\"></div></div></div></div>  </body></html>",
+  "rawHtml": null,
+  "links": null,
+  "extract": null,
+  "screenshot": null,
+  "metadata": {
+    "generator": "Site Kit by Google 1.144.0",
+    "title": "MetalOk",
+    "favicon": "https://metalok.es/wp-content/uploads/2023/12/LogotipoVertical-150x150.png",
+    "language": "es-ES",
+    "viewport": "width=device-width, initial-scale=1",
+    "robots": "max-image-preview:large",
+    "msapplication-TileImage": "https://metalok.es/wp-content/uploads/2023/12/LogotipoVertical.png",
+    "scrapeId": "51fccede-f244-4f07-bea0-b702350040ae",
+    "sourceURL": "http://metalok.es/",
+    "url": "https://metalok.es/",
+    "statusCode": 200,
+    "contentType": "text/html; charset=UTF-8",
+    "proxyUsed": "basic"
+  },
+  "actions": null,
+  "title": null,
+  "description": null,
+  "changeTracking": null,
+  "success": true,
+  "warning": null,
+  "error": null
+}

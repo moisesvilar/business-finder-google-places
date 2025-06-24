@@ -1,0 +1,26 @@
+{
+  "url": null,
+  "markdown": "# Empresa de mecanizado. Fabricación conjuntos mecánicos. Mecanizados CNC. Fresado, Torneado, Soldadura.    Mecánica para la Industria.\n\nWEB EN CONTRUCCIÓN\n\n## Contacta con nosotros en:\n\nEstrada Baños de Arteixo, 4A-4B\n\n(Polígono Industrial de La Grela)\n\n\n15008 A Coruña (España)\n\nTel.: (+34) 981 297 311\n\nFax: (+34) 981 292 650\n\n\nMail: [vch@vilarcastro.com](mailto: vch@vilarcastro.com)",
+  "html": "<!DOCTYPE html><html xmlns=\"http://www.w3.org/1999/xhtml\">\n\n<body topmargin=\"0\">\n<div class=\"supercontenedor\">\n<div class=\"contenedor\">\n  <div class=\"logo\"></div>\n  <div class=\"texto\">\n    <h1>Empresa de mecanizado. Fabricación conjuntos mecánicos. Mecanizados CNC. Fresado, Torneado, Soldadura.<br>\n  Mecánica para la Industria.</h1>\n  <p>WEB EN CONTRUCCIÓN</p>\n  <h2>Contacta con nosotros en:</h2>\n  <p style=\"margin-top: 20px; margin-bottom: 0;\">Estrada Baños de Arteixo, 4A-4B<br>\n    (Polígono Industrial de La Grela)\n      <br>\n    15008 A Coruña (España)</p>\n  <p style=\"margin-top: 20px; margin-bottom: 0;\">Tel.: (+34) 981 297 311<br>\n    Fax: (+34) 981 292 650\n      <br>\n    Mail: <a href=\"mailto: vch@vilarcastro.com\">vch@vilarcastro.com</a></p>\n  </div>\n</div>\n</div>\n\n\n</body></html>",
+  "rawHtml": null,
+  "links": null,
+  "extract": null,
+  "screenshot": null,
+  "metadata": {
+    "title": "Vilar Castro Hnos",
+    "”viewport”": "”width=device-width,",
+    "scrapeId": "44b6a8ba-26ec-4d3f-8761-9fa604a7c724",
+    "sourceURL": "http://www.vilarcastro.com/",
+    "url": "https://www.vilarcastro.com/",
+    "statusCode": 200,
+    "contentType": "text/html",
+    "proxyUsed": "basic"
+  },
+  "actions": null,
+  "title": null,
+  "description": null,
+  "changeTracking": null,
+  "success": true,
+  "warning": null,
+  "error": null
+}
